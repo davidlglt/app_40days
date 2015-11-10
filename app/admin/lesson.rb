@@ -11,11 +11,11 @@ ActiveAdmin.register Lesson do
   end
 
   index do
-    selectable_colum
-    colum :header
-    colum :title
-    colum :tag
-    colum :course
+    selectable_column
+    column :header
+    column :title
+    column :tag
+    column :course
 
     actions
   end
