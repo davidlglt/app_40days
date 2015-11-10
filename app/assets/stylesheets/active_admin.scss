@@ -15,3 +15,15 @@
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+
+
+//DELETE DEFAULT LOGO OF ADMIN//
+$skinLogo: none;
+
+//CHANGE COLOR IN ADMIN BACKEND//
+$skinActiveColor: #00A702;
+$skinHeaderBck: #002100;
+$panelHeaderBck: #002100;
+
+//TO ADD STYLE//
+@import "active_skin";
