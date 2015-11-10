@@ -12,6 +12,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
+
 ActiveRecord::Schema.define(version: 20151110110234) do
 
 
@@ -86,7 +87,7 @@ ActiveRecord::Schema.define(version: 20151110110234) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-<<<<<<< HEAD
+
     t.string   "provider"
     t.string   "uid"
     t.string   "picture"
@@ -94,7 +95,7 @@ ActiveRecord::Schema.define(version: 20151110110234) do
     t.string   "last_name"
     t.string   "token"
     t.datetime "token_expiry"
-=======
+
     t.string   "first_name"
     t.string   "last_name"
     t.string   "address"
@@ -102,7 +103,7 @@ ActiveRecord::Schema.define(version: 20151110110234) do
     t.string   "city"
     t.string   "country"
     t.string   "zipcode"
->>>>>>> master
+
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
