@@ -5,5 +5,4 @@ class Lesson < ActiveRecord::Base
   validates :video, presence: true
   validates :tag, presence: true
   validates :course, presence: true
-
 end
