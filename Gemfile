@@ -7,6 +7,9 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
 
+#Facebook Gem
+gem 'omniauth-facebook'
+
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
 gem 'uglifier'
