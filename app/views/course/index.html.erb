@@ -1,9 +1,17 @@
-<h1>Liste des cours</h1>
-<% @courses.each do |course| %>
-<li>
-  <%= link_to course do %>
-  <%= image_tag course.image(:thumb) %>
-  <%= course.name %>
-  <% end %>
-</li>
-<% end %>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <div class="card">
+      <% @courses.each do |course| %>
+        <%= link_to course do %>
+        <%= image_tag course.image(:thumb) %>
+        <%= course.name %>
+        </div>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+</div>
