@@ -24,6 +24,8 @@ gem 'paperclip'
 gem 'activeadmin', github: 'activeadmin'
 #Add style to admin Backend
 gem 'active_skin'
+#Drap and drop for admin
+gem 'active_admin-sortable_tree', '~> 0.2.1'
 
 group :development, :test do
   gem 'binding_of_caller'
