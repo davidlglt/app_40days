@@ -18,6 +18,11 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 
+#Admin Backend
+gem 'activeadmin', github: 'activeadmin'
+#Add style to admin Backend
+gem 'active_skin'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
