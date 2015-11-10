@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to course
     else
-      render 'restaurants/show'
+      render 'course/show'
     end
   end
 
