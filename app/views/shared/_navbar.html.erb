@@ -24,8 +24,9 @@
       <hr>
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag current_user.picture, class: "avatar dropdown-toggle facebook-avatar", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag current_user.picture, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+
             <li>
               <%= link_to "#" do %>
                 <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
@@ -44,7 +45,7 @@
           </ul>
         </div>
       </div>
-    <% else %>
+    <% else %>.
       <%= link_to "Sign in with Facebook", omniauth_authorize_path('user', 'facebook'), class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
     <hr>

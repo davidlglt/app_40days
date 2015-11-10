@@ -6,8 +6,10 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to course
     else
-      render 'courses/show'
+      render 'restaurants/show'
+    end
   end
+
 
   def destroy
     @review = Review.find(params[:id])
@@ -21,6 +23,4 @@ class ReviewsController < ApplicationController
     def review_params
       params.require(:review).permit(:star, :comment, :project_id, :user_id)
     end
-end
-
 end
