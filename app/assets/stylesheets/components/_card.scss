@@ -1,0 +1,72 @@
+.card-wrapper {
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 3px #ddd;
+  margin-bottom: 25px;
+}
+
+.card {
+  position: relative;
+  height: 200px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  color: white;
+  margin: 0px auto;
+  box-shadow: 2px 2px 3px #ddd
+}
+  .block {
+  height: 70px;
+  background-color: white;
+  color: #565a5c;
+    .block-description {
+      padding: 23px 15px;
+    }
+  }
+
+.card-bg{
+  background-size: cover;
+  border-radius: 0px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+.card-gradient {
+  background-image: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 80%);
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+.card-category {
+  font-size: 18px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 170px;
+  left: 10px;
+}
+.card-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  }
+    h2 {
+      font-size: 12px;
+    }
+
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
+  &:hover{
+    opacity: 0.1;
+  }
+}

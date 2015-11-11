@@ -1,9 +1,91 @@
-<h1>Liste des cours</h1>
-<% @courses.each do |course| %>
-<li>
-  <%= link_to course do %>
-  <%= image_tag course.image(:thumb) %>
-  <%= course.name %>
-  <% end %>
-</li>
-<% end %>
+
+ <div class="background">
+<!-- Banner -->
+  <div class="banner text-center" style="background-image: url('<%= image_path "banner.jpg" %>')">
+    <div class="banner-gradient"></div>
+    <div class="banner-content">
+      <h1>Apprenez une langue par objectifs</h1>
+      <p>Fun, pratique, et atteignable en seulement 40 jours !</p>
+      <a class="btn btn-primary btn-lg">GET IT</a>
+    </div>
+  </div>
+  <!-- FIN BANNER -->
+
+    <h2 class="section-title-home">
+        <div class="section-title-home-content" style="font-size:30px;">
+            Apprenez en seulement 40 jours
+        </div>
+    </h2>
+      <p class="text-muted text-center section-title-home-subtitle">
+      </p>
+
+<!-- DEBUT FEATURES -->
+
+  <div class="features">
+        <div class="container">
+          <div class="row">
+            <div class="text-center">
+              <div class="col-xs-12 col-sm-6 col-md-3">
+                <%= image_tag "progress.png", class: "picto" %>
+                  <p class="text-center">
+                    Atteignez des objectifs concrets en seulement<strong>40</strong> jours !
+                  </p>
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="col-xs-12 col-sm-6 col-md-3">
+                  <%= image_tag "screen.png", class: "picto" %>
+                  <p class="text-center">
+                    Des vidéos pédagogioque créés par les meilleurs <strong>experts</strong> dans leur domaine.
+                  </p>
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="col-xs-12 col-sm-6 col-md-3">
+                  <%= image_tag "app.png", class: "picto"%>
+                  <p class="text-center">
+                    Mémorisez et pratiquez depuis votre smartphone sur notre <strong> application dédiée</strong>.
+                  </p>
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="col-xs-12 col-sm-6 col-md-3">
+                  <%= image_tag "check.png", class: "picto" %>
+                  <p class="text-center">
+                    Vous pratiquez chaque semaine à travers des challenges <strong>concrets</strong> en immersion.
+                  </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- FIN FEATURES -->
+
+<!-- DEBUT THUMBNAILS -->
+  <div class="container">
+    <div class="row">
+      <% @courses.each do |course| %>
+        <%= link_to course do %>
+         <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="card-wrapper">
+              <div class="card">
+                <span class="card-bg" style="background-image: url('<%=course.image%>')"></span>
+                <!--<span class="card-gradient"></span>-->
+                  <span class="card-category"><%= course.name %></span>
+                </div>
+                <div class="block">
+                  <span><p class="block-description">ici il y aura une petite descripton</p></span>
+                  </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
+
+</div> <!-- DIV BACKGROUND -->
+
+<!-- FIN THUMBNAILS -->
+
+
