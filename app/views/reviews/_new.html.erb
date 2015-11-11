@@ -1,11 +1,17 @@
-<%= simple_form_for([course, review]) do |f| %>
-  <div id=""></div>
-  <%= f.input :comment %>
-  <%= f.input :star %>
+  <div class="container">
+    <div class="row">
+      <div class = "col-xs-12 sm-4">
+        <%= simple_form_for([course, review]) do |f| %>
 
-  <%= f.hidden_field :course_id, :value => @course.id %>
+        <%= f.input :comment %>
+        <%= f.input :star %>
 
-  <div class="actions">
-    <%= f.submit %>
+         <%= f.hidden_field :course_id, :value => @course.id %>
+
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>

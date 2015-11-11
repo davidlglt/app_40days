@@ -15,10 +15,14 @@
 
 <!-- Review -->
 
-<div>
-  <h2>
-    <%= pluralize @course.reviews.size, "review" %>
-  </h2>
+  <div class="container">
+    <div class="row">
+      <div class = "col-xs-12 sm-4">
+        <h2><%= pluralize @course.reviews.size, "review" %></h2>
+      </div>
+    </div>
+  </div>
+
 
   <div id="reviews">
     <% if @course.reviews.blank? %>
@@ -30,7 +34,6 @@
     <% end %>
     <!-- TODO display only if user connected AND user payed that course -->
     <%= render 'reviews/new', course: @course, review: @review if current_user %>
-
   </div>
 </div>
 <!-- Review -->
