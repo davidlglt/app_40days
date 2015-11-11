@@ -11,18 +11,27 @@
   </ul>
 <% end %>
 
-<h2>
-  <%= pluralize @course.reviews.size, "review" %>
-</h2>
 
-<div id="reviews">
-  <% if @course.reviews.blank? %>
-    Be the first to leave a review for <%= @course.name %>
-  <% else %>
-    <% @course.reviews.each do |review| %>
-      <%= render 'reviews/show', review: review %>
+
+<!-- Review -->
+
+<div>
+  <h2>
+    <%= pluralize @course.reviews.size, "review" %>
+  </h2>
+
+  <div id="reviews">
+    <% if @course.reviews.blank? %>
+      Be the first to leave a review for <%= @course.name %>
+    <% else %>
+      <% @course.reviews.each do |review| %>
+        <%= render 'reviews/show', review: review %>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+    <!-- TODO display only if user connected AND user payed that course -->
+    <%= render 'reviews/new', course: @course, review: @review if current_user %>
 
-<%= render 'reviews/form', course: @course, review: @review %>
+  </div>
+</div>
+<!-- Review -->
+

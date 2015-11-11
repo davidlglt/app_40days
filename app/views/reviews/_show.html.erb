@@ -1,1 +1,8 @@
-<p><%= review.comment %></p>
+<div>
+  <p><%= review.comment %></p>
+  <p><%= review.star %></p>
+
+  <% if policy(review).destroy? %>
+  <%= link_to "destroy", course_review_path(@course, review), method: :delete, data: { confirm: "Are you sure?"} %>
+  <% end %>
+</div>

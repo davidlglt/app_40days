@@ -20,6 +20,9 @@ gem 'paperclip'
 #Facebook Gem
 gem 'omniauth-facebook'
 
+#pundit
+gem "pundit"
+
 #i18n
 gem "rails-i18n"
 

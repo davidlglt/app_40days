@@ -1,7 +1,8 @@
 class CourseController < ApplicationController
 
- # before_action :authenticate_user!, only: [:list]
-
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_after_action :verify_policy_scoped
+  skip_after_action :verify_authorized
   def index
     @courses = Course.all
   end
