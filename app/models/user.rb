@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
 
   has_many :reviews
+  has_many :subscriptions, dependent: :destroy
+  has_many :courses, through: :subscriptions
 
 
   devise :omniauthable, omniauth_providers: [:facebook]

@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel panel-success">
+        <div class="panel-heading">My profil |  <%= link_to "Edit my profil", edit_user_registration_path %></div>
+        <div class="panel-body">
+          <ul>
+          <li><p><span>Email</span> <%= @user.email %></p></li><br>
+
+          <li><p><span>First Name</span> <%= @user.first_name %></p></li><br>
+          <li><p><span>Last Name</span> <%= @user.last_name %></p></li><br>
+          <div class="profil_picture"><%= image_tag @user.picture %></div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @courses.each do |course| %>
+      <div class="col-md-4">
+        <p><%= image_tag course.image(:medium) %></p>
+        <p><%= course.name %></p>
+        <hr>
+        <h2><%= course.content %></h2>
+          <div class="lessons">
+            <% course.lessons.each do |lesson| %>
+              <% if lesson.header %>
+                  <ul class="nav nav-pills nav-stacked">
+                    <li role="presentation" class="active"><a href="#"><%= lesson.name %></a></li>
+                  </ul>
+              <% else %>
+                  <ul class="nav nav-pills nav-stacked">
+                    <li role="presentation"><%= link_to [lesson.course, lesson] do %><%= lesson.note %></li>
+                  </ul>
+                  <% end %>
+              <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
