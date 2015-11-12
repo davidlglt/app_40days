@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
 
   has_many :reviews
+  has_many :subscriptions, dependent: :destroy
+  has_many :courses, through: :subscriptions
 
 
   devise :omniauthable, omniauth_providers: [:facebook]
@@ -27,5 +29,14 @@ class User < ActiveRecord::Base
 
   validates :first_name, presence: true, length: { maximum: 25 }
   validates :last_name, presence: true, length: { maximum: 25 }
+
+
+  after_create :send_welcome_email
+
+  private
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_now
+  end
 
 end

@@ -1,6 +1,8 @@
 class Course < ActiveRecord::Base
   has_many :lessons
   has_many :reviews, dependent: :destroy
+  has_many :subscriptions
+  has_many :user, through: :subscriptions
 
   validates :name, presence: true, length: { maximum: 50}
   validates :content, presence: true, length: { maximum: 500}

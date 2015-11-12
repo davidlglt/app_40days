@@ -23,44 +23,23 @@
 </div>
 
 
-
-<!-- DEBUT CARD PRICE -->
-<div class="container">
-    <div class="row">
-         <div class="col-md-4">
-            <div class="card-wrapper">
-              <div class="card">
-                <span class="card-bg"></span>
-                   <p><%= image_tag @course.image(:medium) %></p>
-                  <span class="card-gradient"></span>
-                      <div class="label label-info price">
-                        <span class="glyphicon glyphicon-tag"></span> <sup>€</sup><%= @course.price %>
-                      </div>
-                    <button type="button" class="btn btn-success">je commence ce cours</button>
-              </div>
-            </div>
-        </div>
-    </div>
-<!-- FIN CARD PRICE -->
-
-
 <!-- Review -->
 
 <div class="container">
-    <div class="row">
-      <div class = "col-md-3">
-          <h2><%= pluralize @course.reviews.size, "review" %></h2>
-        <div id="reviews">
-          <% if @course.reviews.blank? %>
-            Be the first to leave a review for <%= @course.name %>
-          <% else %>
-            <% @course.reviews.each do |review| %>
-              <%= render 'reviews/show', review: review %>
-            <% end %>
-          <% end %>
-          <!-- TODO display only if user connected AND user payed that course -->
-          <%= render 'reviews/new', course: @course, review: @review if current_user %>
-        </div>
+  <div class="row">
+    <div class = "col-md-3">
+      <h2><%= pluralize @course.reviews.size, "review" %></h2>
+      <div id="reviews">
+        <% if @course.reviews.blank? %>
+        Be the first to leave a review for <%= @course.name %>
+        <% else %>
+        <% @course.reviews.each do |review| %>
+        <%= render 'reviews/show', review: review %>
+        <% end %>
+        <% end %>
+        <!-- TODO display only if user connected AND user payed that course -->
+        <%= render 'reviews/new', course: @course, review: @review if current_user %>
+      </div>
     </div>
   </div>
 </div>
