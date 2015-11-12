@@ -7,9 +7,20 @@
   padding-bottom: 25px;
   width: 100%;
   text-align: center;
+
+  h4 {
+    font-size: 1em;
+  }
+
+  p {
+    font-size: 0.85em
+  }
 }
 
-
+// Style logo
+.logo-footer{
+  heigth: 120px;
+}
 
 
 // Style de A PROPOS DE NOUS
@@ -85,11 +96,10 @@
   }
 }
 
-
 // Style of "© 40days, inc."
 .shout-out {
   margin-top: 0;
   color: #a6a6a6;
   font-size: 0.85em;
-  font-family: 'Gotham Rounded';
 }
+
