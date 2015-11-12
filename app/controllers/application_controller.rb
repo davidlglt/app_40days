@@ -11,8 +11,8 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters,  if: :devise_controller?
 
-  after_action :verify_authorized, except: :index, unless: :devise_controller?
-  after_action :verify_policy_scoped, only: :index, unless: :devise_controller?
+  after_action :verify_authorized, except: :index, unless: :devise_or_admin_controller?
+  after_action :verify_policy_scoped, only: :index, unless: :devise_or_admin_controller?
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
@@ -26,5 +26,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:first_name, :last_name, :email, :password, :remember_me) }
     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:email, :password, :remember_me) }
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:first_name, :last_name, :address, :password, :phone_number, :city, :zip_code, :country, :remember_me) }
+  end
+
+  def devise_or_admin_controller?
+    devise_controller? || params[:controller] =~ /admin/
   end
 end

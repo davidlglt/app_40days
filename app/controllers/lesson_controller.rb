@@ -3,5 +3,6 @@ class LessonController < ApplicationController
     course = Course.find(params[:course_id])
     @lessons = course.lessons.order(:tag)
     @lesson = @lessons.find(params[:id])
+    authorize @lesson
   end
 end
