@@ -30,8 +30,8 @@
   width: 100%;
 }
 .card-gradient {
-  background-image: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 80%);
-  border-radius: 3px;
+  background-image: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 80%);
+  border-radius: 0px;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -48,10 +48,10 @@
   position: absolute;
   bottom: 10px;
   left: 10px;
-  }
     h2 {
-      font-size: 12px;
+      font-size: 10px;
     }
+  }
 
 .card-user {
   position: absolute;
