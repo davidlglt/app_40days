@@ -1,1 +1,105 @@
-// Your footer style
+// Your footer style //
+.footer{
+  background-color: rgb(43, 45, 46);
+  color: rgb(237, 239, 237);
+  font-family: 'Open Sans';
+  padding-top: 30px;
+  padding-bottom: 25px;
+  width: 100%;
+  text-align: center;
+
+  h4 {
+    font-size: 1em;
+  }
+
+  p {
+    font-size: 0.85em
+  }
+}
+
+// Style logo
+.logo-footer{
+  heigth: 120px;
+}
+
+
+// Style de A PROPOS DE NOUS
+.footer-section-links li {
+  display: inline-block;
+
+  a {
+    color: white;
+  }
+}
+
+// Style of social icons
+
+.footer-social-icons {
+  p {
+    font-size: 1.15em;
+  }
+  a {
+    display: inline-block;
+    color: white;
+  }
+  li {
+    width: 30px;
+    height: 30px;
+    background-color: #999999;
+    border-radius: 3px;
+    margin-right: 5px;
+    i.fa {
+      padding-top: 6px;
+    }
+  }
+
+  #facebook {
+    &:hover, &:active, &:focus {
+    background-color: #5373a9;
+    }
+  }
+
+  #linkedin {
+    &:hover, &:active, &:focus {
+    background-color: #0071ad;
+    }
+  }
+
+  #twitter {
+    &:hover, &:active, &:focus {
+    background-color: #55acee;
+    }
+  }
+
+  #google {
+    &:hover, &:active, &:focus {
+    background-color: #df5646;
+    }
+  }
+
+  #instagram {
+    &:hover, &:active, &:focus {
+    background-color: #895a4d;
+    }
+  }
+
+  #github {
+    &:hover, &:active, &:focus {
+    background-color: #C2A08F;
+    }
+  }
+
+  #youtube {
+    &:hover, &:active, &:focus {
+    background-color: #cc181e;
+    }
+  }
+}
+
+// Style of "© 40days, inc."
+.shout-out {
+  margin-top: 0;
+  color: #a6a6a6;
+  font-size: 0.85em;
+}
+
