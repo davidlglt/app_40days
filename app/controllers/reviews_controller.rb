@@ -12,7 +12,6 @@ class ReviewsController < ApplicationController
       #   format.js  # <-- will render `app/views/reviews/create.js.erb`
       # end
     else
-      raise
       # respond_to do |format|
       #   format.html { render 'course/show' }
       #   format.js  # <-- idem
