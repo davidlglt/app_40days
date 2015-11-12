@@ -1,43 +1,48 @@
 
+
+<div class="banner text-center" style="background-image: url('<%=@course.image%>')">
+  <div class="banner-gradient"></div>
+  <div class="banner-content">
+    <h1><%= @course.name %></h1>
+    <p>Ici une petite description du cours (manque cette colone en DB)</p>
+    <a class="btn btn-primary btn-lg">Je commence maintenant</a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-offset-4 col-sm-4">
+    <div class="thumbnail">
+      <div id="wistia_<%= @course.video_teaser %>"></div>
+      <div class="caption">
+        <h3>TEASER VIDEO DU COURS</h3>
+        <p>...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 <!-- DEBUT CARD PRICE -->
 <div class="container">
     <div class="row">
          <div class="col-md-4">
             <div class="card-wrapper">
               <div class="card">
-                i <p><%= image_tag @course.image(:medium) %></p>
-                <span class="card-gradient"></span>
-                    <div class="label label-info price">
-                      <span class="glyphicon glyphicon-tag"></span> <sup>€</sup><%= @course.price %>
-                    </div>
-                  <button type="button" class="btn btn-success">je commence ce cours</button>
+                <span class="card-bg"></span>
+                   <p><%= image_tag @course.image(:medium) %></p>
+                  <span class="card-gradient"></span>
+                      <div class="label label-info price">
+                        <span class="glyphicon glyphicon-tag"></span> <sup>€</sup><%= @course.price %>
+                      </div>
+                    <button type="button" class="btn btn-success">je commence ce cours</button>
               </div>
             </div>
         </div>
-<!-- FIN CARD PRICE -->
-<!-- DEBUT COURSES -->
-        <div class="col-md-8">
-          <p><%= image_tag @course.image(:medium) %></p>
-          <p><%= @course.name %></p>
-          <hr>
-          <h2><%= @course.content %></h2>
-            <div class="lessons">
-                <% @lessons.each do |lesson| %>
-                  <% if lesson.header %>
-                  <ul class="nav nav-pills nav-stacked">
-                    <li role="presentation" class="active"><a href="#"><%= lesson.title %></a></li>
-                  </ul>
-                  <% else %>
-                  <ul class="nav nav-pills nav-stacked">
-                    <li role="presentation"><%= link_to [lesson.course, lesson] do %><%= lesson.note %></li>
-                  </ul>
-                  <% end %>
-               <% end %>
-               <% end %>
-            </div>
-        </div>
-      </div>
     </div>
+<!-- FIN CARD PRICE -->
+
 
 <!-- Review -->
 
@@ -60,4 +65,19 @@
   </div>
 </div>
 <!-- Review -->
+
+
+
+<script src="http://fast.wistia.net/static/E-v1.js"></script>
+<script>
+  wistiaEmbed = Wistia.embed("<%= @course.video_teaser %>", {
+    videoQuality: "hd-only",
+    videoFoam: true
+  });
+
+  function setPlaySpeed(speed) {
+    wistiaEmbed.playbackRate(speed);
+  }
+</script>
+
 
