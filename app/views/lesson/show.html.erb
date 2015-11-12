@@ -1,14 +1,77 @@
-<h1><%= @lesson.name %></h1>
-<p><%= @lesson.note %></p>
-<p><%= @lesson.video %></p>
 
 
-<!-- Faire une navbar pour l'évolution des lessons-->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
+<div class="container">
+  <div class="row">  <!-- row 1-->
+
+
+    <div class="col-md-4">
+      <% @lessons.each do |lesson| %>
+        <% if lesson.header %>
+        <ul class="nav nav-pills nav-stacked">
+          <li role="presentation" class="active"><a href="#"><%= lesson.name %></a></li>
+        </ul>
+        <% else %>
+        <ul class="nav nav-pills nav-stacked">
+          <li role="presentation"><%= link_to [lesson.course, lesson] do %><%= lesson.note %></li><% end %>
+        </ul>
+        <% end %>
+      <% end %>
+    </div> <!-- col lessons -->
+
+
+    <!-- LECTEUR VIDEO row 1 -->
+    <div class="col-md-7">
+      <div class="thumbnail">
+        <div id="wistia_<%= @lesson.video %>"></div>
+
+
+        <div class="caption">
+          <div class="row">
+            <div class="col-md-2">
+              <% if !@prev_lesson.nil? %>
+                <%= link_to "Prev", [@prev_lesson.course, @prev_lesson], class: "btn btn-primary" %>
+              <% else %>
+                &nbsp;
+              <% end %>
+            </div>
+            <div class="col-md-8">
+              <!-- BOUTON ACCELERATIPON DU PLAYER -->
+              <button class="btn btn-primary" onclick="setPlaySpeed(0.75)">0.75x</button>
+              <button class="btn btn-primary" onclick="setPlaySpeed(1)">1x</button>
+              <button class="btn btn-primary" onclick="setPlaySpeed(1.25)">1.25x</button>
+              <button class="btn btn-primary" onclick="setPlaySpeed(1.5)">1.5x</button>
+              <button class="btn btn-primary" onclick="setPlaySpeed(2)">2x</button>
+            </div>
+            <div class="col-md-2 pull-right">
+              <% if !@next_lesson.nil? %>
+                <%= link_to "Next", [@next_lesson.course, @next_lesson], class: "btn btn-success"%>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <!-- TITRE ET NOTES DE COURS -->
+        <h4><%= @lesson.name%></h4>
+        <p><%= @lesson.note%></p>
+      </div> <!-- Thumbnail -->
+    </div>
+
+
+
+  </div> <!-- FIN row 1-->
+</div> <!-- CONTAINER -->
+
+
+<script src="http://fast.wistia.net/static/E-v1.js"></script>
+<script>
+  wistiaEmbed = Wistia.embed("<%= @lesson.video %>", {
+    videoQuality: "hd-only",
+    videoFoam: true
+  });
+
+  function setPlaySpeed(speed) {
+    wistiaEmbed.playbackRate(speed);
+  }
+</script>
+
+
