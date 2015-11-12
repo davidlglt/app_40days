@@ -1,39 +1,62 @@
-<h1><%= @course.name %></h1>
-  <p><%= image_tag @course.image(:medium) %></p>
-  <p><%= @course.content %></p>
-  <ul>
-    <% @lessons.each do |lesson| %>
-    <li>
-        <%= link_to [lesson.course, lesson] do %>
-        <%= lesson.note %>
-    </li>
-      <% end %>
-  </ul>
-<% end %>
 
-
+<!-- DEBUT CARD PRICE -->
+<div class="container">
+    <div class="row">
+         <div class="col-md-4">
+            <div class="card-wrapper">
+              <div class="card">
+                i <p><%= image_tag @course.image(:medium) %></p>
+                <span class="card-gradient"></span>
+                    <div class="label label-info price">
+                      <span class="glyphicon glyphicon-tag"></span> <sup>€</sup><%= @course.price %>
+                    </div>
+                  <button type="button" class="btn btn-success">je commence ce cours</button>
+              </div>
+            </div>
+        </div>
+<!-- FIN CARD PRICE -->
+<!-- DEBUT COURSES -->
+        <div class="col-md-8">
+          <p><%= image_tag @course.image(:medium) %></p>
+          <p><%= @course.name %></p>
+          <hr>
+          <h2><%= @course.content %></h2>
+            <div class="lessons">
+                <% @lessons.each do |lesson| %>
+                  <% if lesson.header %>
+                  <ul class="nav nav-pills nav-stacked">
+                    <li role="presentation" class="active"><a href="#"><%= lesson.title %></a></li>
+                  </ul>
+                  <% else %>
+                  <ul class="nav nav-pills nav-stacked">
+                    <li role="presentation"><%= link_to [lesson.course, lesson] do %><%= lesson.note %></li>
+                  </ul>
+                  <% end %>
+               <% end %>
+               <% end %>
+            </div>
+        </div>
+      </div>
+    </div>
 
 <!-- Review -->
 
-  <div class="container">
+<div class="container">
     <div class="row">
-      <div class = "col-xs-12 sm-4">
-        <h2><%= pluralize @course.reviews.size, "review" %></h2>
-      </div>
+      <div class = "col-md-3">
+          <h2><%= pluralize @course.reviews.size, "review" %></h2>
+        <div id="reviews">
+          <% if @course.reviews.blank? %>
+            Be the first to leave a review for <%= @course.name %>
+          <% else %>
+            <% @course.reviews.each do |review| %>
+              <%= render 'reviews/show', review: review %>
+            <% end %>
+          <% end %>
+          <!-- TODO display only if user connected AND user payed that course -->
+          <%= render 'reviews/new', course: @course, review: @review if current_user %>
+        </div>
     </div>
-  </div>
-
-
-  <div id="reviews">
-    <% if @course.reviews.blank? %>
-      Be the first to leave a review for <%= @course.name %>
-    <% else %>
-      <% @course.reviews.each do |review| %>
-        <%= render 'reviews/show', review: review %>
-      <% end %>
-    <% end %>
-    <!-- TODO display only if user connected AND user payed that course -->
-    <%= render 'reviews/new', course: @course, review: @review if current_user %>
   </div>
 </div>
 <!-- Review -->
