@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151110135112) do
+ActiveRecord::Schema.define(version: 20151110172240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,18 @@ ActiveRecord::Schema.define(version: 20151110135112) do
 
   add_index "lessons", ["course_id"], name: "index_lessons_on_course_id", using: :btree
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "course_id"
+    t.integer  "user_id"
+    t.text     "comment"
+    t.integer  "star"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "reviews", ["course_id"], name: "index_reviews_on_course_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -88,11 +100,6 @@ ActiveRecord::Schema.define(version: 20151110135112) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "address"
-    t.string   "phone_number"
-    t.string   "city"
-    t.string   "country"
-    t.string   "zipcode"
     t.string   "provider"
     t.string   "uid"
     t.string   "picture"
@@ -100,10 +107,17 @@ ActiveRecord::Schema.define(version: 20151110135112) do
     t.string   "last_name"
     t.string   "token"
     t.datetime "token_expiry"
+    t.string   "address"
+    t.string   "phone_number"
+    t.string   "city"
+    t.string   "country"
+    t.string   "zipcode"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "lessons", "courses"
+  add_foreign_key "reviews", "courses"
+  add_foreign_key "reviews", "users"
 end

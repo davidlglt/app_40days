@@ -7,9 +7,6 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
 
-#Facebook Gem
-gem 'omniauth-facebook'
-
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
 gem 'uglifier'
@@ -19,6 +16,15 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'aws-sdk', '< 2.0'
 gem 'paperclip'
+
+#Facebook Gem
+gem 'omniauth-facebook'
+
+#pundit
+gem "pundit"
+
+#i18n
+gem "rails-i18n"
 
 #Admin Backend
 gem 'activeadmin', github: 'activeadmin'
