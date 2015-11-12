@@ -1,19 +1,19 @@
 
  <div class="background">
 <!-- Banner -->
-  <div class="banner text-center" style="background-image: url('<%= image_path "banner.jpg" %>')">
+  <div class="banner text-center" style="background-image: url('<%= image_path "jumbo5.png" %>')">
     <div class="banner-gradient"></div>
     <div class="banner-content">
       <h1>Apprenez une langue par objectifs</h1>
-      <p>Fun, pratique, et atteignable en seulement 40 jours !</p>
-      <a class="btn btn-primary btn-lg">GET IT</a>
+      <p>Fun, pratique, et atteignable en moins 40 jours !</p>
+      <a href="#courses"><button type="button" class="btn btn-primary button-wrapper">VOIR LES COURS</button></a>
     </div>
   </div>
   <!-- FIN BANNER -->
-
-    <h2 class="section-title-home">
+    <span id="courses"></span>
+    <h2 class="section-title-home"  >
         <div class="section-title-home-content" style="font-size:30px;">
-            Apprenez en seulement 40 jours
+            Et si vous vous fixiez un objectif pour les 40 prochains jours ?
         </div>
     </h2>
       <p class="text-muted text-center section-title-home-subtitle">
@@ -28,7 +28,7 @@
               <div class="col-xs-12 col-sm-6 col-md-3">
                 <%= image_tag "progress.png", class: "picto" %>
                   <p class="text-center">
-                    Atteignez des objectifs concrets en seulement<strong>40</strong> jours !
+                    Atteignez des objectifs concrets, mesurable et tangible en moins <strong>40</strong> jours !
                   </p>
               </div>
             </div>
@@ -71,7 +71,13 @@
             <div class="card-wrapper">
               <div class="card">
                 <span class="card-bg" style="background-image: url('<%=course.image%>')"></span>
-                <!--<span class="card-gradient"></span>-->
+                <span class="card-gradient"></span>
+                      <div class="label label-info price">
+                        <span class="glyphicon glyphicon-tag"></span> <sup>€</sup>69
+                      </div>
+                      <div class="label label-info time">
+                        <i class="fa fa-clock-o"></i><span></span> Durée: 20jours</span>
+                      </div>
                   <span class="card-category"><%= course.name %></span>
                 </div>
                 <div class="block">
