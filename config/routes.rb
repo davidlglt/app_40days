@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
+  root to: 'courses#index'
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  devise_for :admin_users, ActiveAdmin::Devise.config
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  root to: 'course#index'
-  post '/free' => 'subscription#free'
 
   resource :profile, only: [:show], controller: 'profile'
 
-  resources :course do
-    resources :lesson, only: [:show]
-    resources :reviews, only: [:create, :destroy]
+  resources :courses do
+    resources :lesson,        only: [:show]
+    resources :reviews,       only: [:create, :destroy]
+    resources :subscriptions, only: [:create]
   end
 
 
