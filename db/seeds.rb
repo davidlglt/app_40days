@@ -17,6 +17,7 @@ User.destroy_all
 course_got = Course.create!(
   name: "GOT",
   picture: File.open(Rails.root.join('db/seeds/images/GOT.jpeg'))
+
 )
 
 lesson_got_1 = course_got.lessons.create!(

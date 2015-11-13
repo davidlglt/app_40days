@@ -6,9 +6,9 @@
         <div class="panel-heading">My profil |  <%= link_to "Edit my profil", edit_user_registration_path %></div>
         <div class="panel-body">
           <ul>
-            <p><span>Email</span> <%= @user.email %></p><br>
+            <p><%=image_tag "mail.png"%><%= @user.email %></p><br>
 
-            <p><%=image_tag "mail.png" %><span>First Name</span> <%= @user.first_name %></p><br>
+            <p><span>First Name: </span> <%= @user.first_name %></p><br>
             <p><span>Last Name</span> <%= @user.last_name %></p><br>
             <div class="profil_picture"><%= image_tag @user.picture %></div>
           </ul>
@@ -17,29 +17,29 @@
     </div>
 
     <!-- course part  -->
-    <div class = 'course'>
+    <div class = 'card-course'>
       <div class = "col-md-8">
         <% @courses.each do |course| %>
-        <%= link_to course do %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="card-wrapper">
-            <div class="card">
-              <span class="card-bg" style="background-image: url('<%=course.image%>')"></span>
-              <span class="card-gradient"></span>
-              <div class="label label-info price">
-                <span class="glyphicon glyphicon-tag"></span>
+          <%= link_to course_lessons_path(course) do %>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="card-wrapper">
+                <div class="card">
+                  <span class="card-bg" style="background-image: url('<%=course.image%>')"></span>
+                  <span class="card-gradient"></span>
+                  <div class="label label-info price">
+                    <span class="glyphicon glyphicon-tag"></span>
+                  </div>
+                  <div class="label label-info time">
+                    <i class="fa fa-clock-o"></i><span></span> Voir le cours</span>
+                  </div>
+                  <span class="card-category"><%= course.name %></span>
+                </div>
+                <div class="block">
+                  <span><p class="block-description">ici il y aura une petite descripton</p></span>
+                </div>
               </div>
-              <div class="label label-info time">
-                <i class="fa fa-clock-o"></i><span></span> Voir le cours</span>
-              </div>
-              <span class="card-category"><%= course.name %></span>
             </div>
-            <div class="block">
-              <span><p class="block-description">ici il y aura une petite descripton</p></span>
-            </div>
-          </div>
-        </div>
-        <% end %>
+          <% end %>
         <% end %>
       </div>
     </div>
