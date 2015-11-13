@@ -4,7 +4,14 @@
   <div class="banner-content">
     <h1><%= @course.name %></h1>
     <p>Ici une petite description du cours (manque cette colone en DB)</p>
-    <a class="btn btn-primary btn-lg">Je commence maintenant</a>
+
+    <% if policy(@subscription).create? %>
+      <%= form_tag course_subscriptions_path(@course) do %>
+        <%= submit_tag "Je commence maintenant", class: "btn btn-primary btn-lg" %>
+      <% end %>
+    <% else %>
+      <%= link_to "Accéder au cours", profile_path, class: "btn btn-primary btn-lg" %>
+    <% end %>
   </div>
 </div>
 

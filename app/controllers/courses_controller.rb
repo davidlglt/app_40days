@@ -1,4 +1,4 @@
-class CourseController < ApplicationController
+class CoursesController < ApplicationController
 
   skip_before_action :authenticate_user!, only: [:index, :show]
   skip_after_action :verify_policy_scoped
@@ -10,10 +10,8 @@ class CourseController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
-
-
     @lessons = @course.lessons.order(:tag)
-
+    @subscription = Subscription.new(course: @course)
 
     # @joined = false
 
