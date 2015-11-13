@@ -13,7 +13,7 @@ ActiveAdmin.register Lesson do
   index do
     selectable_column
     column :header
-    column :title
+    column :name
     column :tag
     column :course
 

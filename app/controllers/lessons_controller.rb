@@ -1,15 +1,14 @@
 class LessonsController < ApplicationController
-  before_action :set_course
   skip_after_action :verify_policy_scoped
 
+  before_action :set_course
+  before_action :set_lessons
+
   def index
-    @lessons = @course.lessons
-    @lesson = @lessons.first
+    @lesson = @lessons.where(header: false).first
   end
 
   def show
-    course = Course.find(params[:course_id])
-    @lessons = course.lessons.order(:tag)
     @lesson = @lessons.find(params[:id])
 
     @next_lesson = @lesson.next
@@ -22,5 +21,9 @@ class LessonsController < ApplicationController
 
   def set_course
     @course = current_user.courses.find(params[:course_id])
+  end
+
+  def set_lessons
+    @lessons = @course.lessons.order(:tag)
   end
 end
