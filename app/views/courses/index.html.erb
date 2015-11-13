@@ -5,8 +5,8 @@
     <div class="banner-gradient"></div>
     <div class="banner-content">
       <h1>Apprenez une langue par objectifs</h1>
-      <h3>Concrt, pratique, et atteignable en moins 40 jours !</h3>
-      <a href="#courses"><button type="button" class="btn btn-primary button-wrapper">VOIR LES COURS</button></a>
+      <h4>Concret, motivant, et atteignable en moins 40 jours !</h4>
+      <a href="#courses"><button type="button" class="btn btn-primary button-wrapper">CHOISIR UN OBJECTIF</button></a>
     </div>
   </div>
   <!-- FIN BANNER -->
@@ -73,15 +73,15 @@
                 <span class="card-bg" style="background-image: url('<%=course.image%>')"></span>
                 <span class="card-gradient"></span>
                       <div class="label label-info price">
-                        <span class="glyphicon glyphicon-tag"></span> <sup>€</sup>69
+                        <span class="glyphicon glyphicon-tag"></span> <sup>€</sup><%=course.price%>
                       </div>
                       <div class="label label-info time">
-                        <i class="fa fa-clock-o"></i><span></span> Durée: 20 jours</span>
+                        <i class="fa fa-clock-o"></i><span></span> Durée: <%=course.duration%> jours</span>
                       </div>
                   <span class="card-category"><%= course.name %></span>
                 </div>
                 <div class="block">
-                  <span><p class="block-description">ici il y aura une petite descripton</p></span>
+                  <span><p class="block-description"><%=course.small_description%></p></span>
                   </div>
               </div>
             </div>
