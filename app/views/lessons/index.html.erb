@@ -1,86 +1,41 @@
 <div class="container">
   <div class="row">  <!-- row 1-->
 
-
     <div class="col-md-4" class="column-lessons">
       <% @lessons.each do |lesson| %>
-        <%= link_to lesson.name, course_lesson_path(@course, lesson), remote: true %>
         <% if lesson.header %>
           <ul class="nav nav-pills nav-stacked">
             <li role="presentation" class="active"><a href="#"><%= lesson.name %></a></li>
           </ul>
         <% else %>
           <ul class="nav nav-pills nav-stacked">
-            <li role="presentation"><%= link_to [lesson.course, lesson] do %><%= lesson.note %></li><% end %>
+            <li role="presentation">
+              <%= link_to lesson.note, [lesson.course, lesson], remote: true %>
+            </li>
           </ul>
         <% end %>
       <% end %>
     </div>
-    <div id = "lesson_show" class= "col-md-4">
-
-    </div>
 
      <!-- col lessons -->
-
-
-    <!-- LECTEUR VIDEO row 1 -->
-    <div class="col-md-7">
-      <div class="thumbnail">
-        <div id="wistia_<%= @lesson.video %>"></div>
-
-
-        <div class="caption">
-          <div class="row">
-            <div class="col-md-2">
-              <% if !@prev_lesson.nil? %>
-                <%= link_to "Prev", [@prev_lesson.course, @prev_lesson], class: "btn btn-primary" %>
-              <% else %>
-                &nbsp;
-              <% end %>
-            </div>
-            <div class="col-md-8">
-              <!-- BOUTON ACCELERATIPON DU PLAYER -->
-              <button class="btn btn-primary" onclick="setPlaySpeed(0.75)">0.75x</button>
-              <button class="btn btn-primary" onclick="setPlaySpeed(1)">1x</button>
-              <button class="btn btn-primary" onclick="setPlaySpeed(1.25)">1.25x</button>
-              <button class="btn btn-primary" onclick="setPlaySpeed(1.5)">1.5x</button>
-              <button class="btn btn-primary" onclick="setPlaySpeed(2)">2x</button>
-            </div>
-            <div class="col-md-2 pull-right">
-              <% if !@next_lesson.nil? %>
-                <%= link_to "Next", [@next_lesson.course, @next_lesson], class: "btn btn-success"%>
-              <% end %>
-            </div>
-          </div>
-        </div>
-
-        <!-- TITRE ET NOTES DE COURS -->
-        <h4><%= @lesson.name%></h4>
-        <p><%= @lesson.note%></p>
-      </div> <!-- Thumbnail -->
+    <div id="lesson_show">
+      <%= render 'show', lesson: @lesson %>
     </div>
 
-
-
+    <!-- LECTEUR VIDEO row 1 -->
   </div> <!-- FIN row 1-->
 </div> <!-- CONTAINER -->
 
+<% content_for :after_js do %>
+  <script src="http://fast.wistia.net/static/E-v1.js"></script>
+  <script>
+    wistiaEmbed = Wistia.embed("<%= @lesson.video %>", {
+      videoQuality: "hd-only",
+      videoFoam: true
+    });
 
-<script src="http://fast.wistia.net/static/E-v1.js"></script>
-<script>
-  wistiaEmbed = Wistia.embed("<%= @lesson.video %>", {
-    videoQuality: "hd-only",
-    videoFoam: true
-  });
-
-  function setPlaySpeed(speed) {
-    wistiaEmbed.playbackRate(speed);
-  }
-</script>
-
-
-
-
-
-
-
+    function setPlaySpeed(speed) {
+      wistiaEmbed.playbackRate(speed);
+    }
+  </script>
+<% end %>

@@ -1,0 +1,35 @@
+<div class="col-md-7">
+  <div class="thumbnail">
+    <div id="wistia_<%= @lesson.video %>"></div>
+
+
+    <div class="caption">
+      <div class="row">
+        <div class="col-md-2">
+          <% if @prev_lesson %>
+            <%= link_to "Prev", [@prev_lesson.course, @prev_lesson], remote: true, class: "btn btn-primary" %>
+          <% else %>
+            &nbsp;
+          <% end %>
+        </div>
+        <div class="col-md-8">
+          <!-- BOUTON ACCELERATIPON DU PLAYER -->
+          <button class="btn btn-primary" onclick="setPlaySpeed(0.75)">0.75x</button>
+          <button class="btn btn-primary" onclick="setPlaySpeed(1)">1x</button>
+          <button class="btn btn-primary" onclick="setPlaySpeed(1.25)">1.25x</button>
+          <button class="btn btn-primary" onclick="setPlaySpeed(1.5)">1.5x</button>
+          <button class="btn btn-primary" onclick="setPlaySpeed(2)">2x</button>
+        </div>
+        <div class="col-md-2 pull-right">
+          <% if @next_lesson %>
+            <%= link_to "Next", [@next_lesson.course, @next_lesson], remote: true, class: "btn btn-success"%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <!-- TITRE ET NOTES DE COURS -->
+    <h4><%= @lesson.name%></h4>
+    <p><%= @lesson.note%></p>
+  </div> <!-- Thumbnail -->
+</div>

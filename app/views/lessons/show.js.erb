@@ -1,4 +1,8 @@
-var customer = $("<%= j render 'lesson/show', lesson: @lesson %>");
+var lesson_view = $("<%= j render 'lessons/show', lesson: @lesson %>");
 
-$('#lesson_show').html(lesson);
+$('#lesson_show').html(lesson_view);
 
+wistiaEmbed = Wistia.embed("<%= @lesson.video %>", {
+  videoQuality: "hd-only",
+  videoFoam:    true
+});
