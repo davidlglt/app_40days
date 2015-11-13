@@ -1,0 +1,61 @@
+.video-wrapper {
+  margin: 20px auto;
+  width: 850px;
+  position: relative;
+}
+
+.benefits-section {
+    text-align: left;
+}
+
+.benefits-section {
+    padding: 20px 0;
+}
+
+.benefits-section h4 {
+    color: #4d4d4d;
+    font-weight: 700;
+}
+.benefits-section ul {
+    padding-left: 1em;
+}
+.benefits-section ul li {
+    font-family: "Gotham A", "Gotham B", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: .88em;
+    text-align: left;
+    line-height: 1.8em;
+    color: #535353;
+}
+
+.enrollment-bar-section {
+    background-color: #f4f5f7;
+    padding: .6em 0 1.5em;
+}
+
+
+.enrollment-bar-omega {
+    width: 33.33333333%;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.btn.btn-enroll {
+    margin-top: 1em;
+    padding: 14px 50px;
+    border-radius: 0;
+    font-weight: 500;
+}
+
+.background-secondary {
+    background-color: #9e4d9d;
+    color: white;
+}
+
+.btn-hg {
+    padding: 13px 20px;
+    font-size: 18px;
+    line-height: 1.227;
+    border-radius: 2px;
+}
