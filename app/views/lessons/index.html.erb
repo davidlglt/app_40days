@@ -1,22 +1,26 @@
-
-
 <div class="container">
   <div class="row">  <!-- row 1-->
 
 
     <div class="col-md-4" class="column-lessons">
       <% @lessons.each do |lesson| %>
+        <%= link_to lesson.name, course_lesson_path(@course, lesson), remote: true %>
         <% if lesson.header %>
-        <ul class="nav nav-pills nav-stacked">
-          <li role="presentation" class="active"><a href="#"><%= lesson.name %></a></li>
-        </ul>
+          <ul class="nav nav-pills nav-stacked">
+            <li role="presentation" class="active"><a href="#"><%= lesson.name %></a></li>
+          </ul>
         <% else %>
-        <ul class="nav nav-pills nav-stacked">
-          <li role="presentation"><%= link_to [lesson.course, lesson] do %><%= lesson.note %></li><% end %>
-        </ul>
+          <ul class="nav nav-pills nav-stacked">
+            <li role="presentation"><%= link_to [lesson.course, lesson] do %><%= lesson.note %></li><% end %>
+          </ul>
         <% end %>
       <% end %>
-    </div> <!-- col lessons -->
+    </div>
+    <div id = "lesson_show" class= "col-md-4">
+
+    </div>
+
+     <!-- col lessons -->
 
 
     <!-- LECTEUR VIDEO row 1 -->
@@ -73,5 +77,10 @@
     wistiaEmbed.playbackRate(speed);
   }
 </script>
+
+
+
+
+
 
 
