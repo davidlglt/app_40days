@@ -2,22 +2,17 @@
   <div class="container navbar-wagon-container">
 
     <a>
-      <%= link_to (image_tag("logo.png", :alt => "home image", :width => 70, :height => 70)), root_path %>
+      <%= link_to (image_tag("logo.png", :alt => "home image", :width => 50, :height => 50)), root_path %>
     </a>
 
     <div class="navbar-wagon-pusher"></div>
-    <hr class="hidden-xs hidden-sm">
+
     <% if user_signed_in? %>
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
-        <div class="icon-badge-container">
-          <i class="fa fa-envelope-o"></i>
-          <div class="icon-badge icon-badge-blue">3</div>
-        </div>
-      <% end %>
-      <hr>
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <%= image_tag current_user.picture, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <span class="dropdown-toggle", data-toggle="dropdown">Mon compte</span>
+          <b class="caret dropdown-toggle", data-toggle="dropdown"></b>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
 
             <li>
@@ -40,8 +35,8 @@
       </div>
     <% else %>.
       <%= link_to "Sign in with Facebook", omniauth_authorize_path('user', 'facebook'), class: "navbar-wagon-item navbar-wagon-link" %>
-    <% end %>
     <hr>
     <%= link_to t(".top_call_to_action", default: "Sign in"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <% end %>
   </div>
 </nav>
