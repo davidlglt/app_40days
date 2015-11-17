@@ -4,27 +4,38 @@
   position: relative;
 }
 
-.benefits-section {
-    text-align: left;
+.about-section-info {
+  padding-left: 90px;
+  padding-right: 90px;
+  padding-top : 20px;
+  padding-bottom: 20px;
+}
+
+.red-banner {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .benefits-section {
     padding: 20px 0;
 }
 
-.benefits-section h4 {
-    color: #4d4d4d;
+.benefits-section h3 {
+    color: white;
     font-weight: 700;
 }
-.benefits-section ul {
-    padding-left: 1em;
-}
+
 .benefits-section ul li {
-    font-family: "Gotham A", "Gotham B", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: .88em;
-    text-align: left;
-    line-height: 1.8em;
-    color: #535353;
+  font-color: white;
+  list-style: inherit;
+  font-family: "Gotham A", "Gotham B", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.8em;
+  color: white;
+}
+
+.list-features {
+  padding-left: 130px;
 }
 
 .enrollment-bar-section {
@@ -59,9 +70,6 @@
     border-radius: 2px;
 }
 
-.about-section-info {
-    margin-left: 8.33333333%;
-}
 
 // SHOW COURSES
 

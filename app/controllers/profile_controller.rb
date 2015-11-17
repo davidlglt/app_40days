@@ -4,5 +4,10 @@ class ProfileController < ApplicationController
   def show
     @user = current_user
     @courses = current_user.courses
+
+    #review
+
+    @review = Review.new
+
   end
 end

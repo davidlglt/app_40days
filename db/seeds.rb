@@ -5,9 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+AdminUser.create!(email: 'admin3@example.com', password: 'password', password_confirmation: 'password')
 
 # Cleanup Begin
+Lesson.destroy_all
 Subscription.destroy_all
 Course.destroy_all
 User.destroy_all
@@ -16,7 +17,7 @@ User.destroy_all
 
 course_got = Course.create!(
   name: "GOT",
-  picture: File.open(Rails.root.join('db/seeds/images/GOT.jpeg'))
+  image: File.open(Rails.root.join('db/seeds/images/GOT.jpeg'))
 
 )
 
