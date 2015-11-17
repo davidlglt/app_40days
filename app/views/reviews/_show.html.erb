@@ -1,12 +1,20 @@
-<div class="container">
-  <div class="row">
-    <div class = "col-xs-12 sm-4">
-      <p>Comment: <%= review.comment %></p>
-      <p>Stars:   <%= review.star %></p>
-
-      <% if policy(review).destroy? %>
-        <%= link_to "Destroy", course_review_path(course, review), method: :delete, data: { confirm: "Are you sure?"}, class: "btn-btn primary" %>
-      <% end %>
+<div class="card-testimonial">
+  <div class="card-testimonial-content">
+    <%= image_tag review.user.picture, class: "img-circle" %>
+    <div class="card-testimonial-text">
+      <span class="quote"><i class="fa fa-quote-left"></i></span>
+      <%= review.comment %>
     </div>
   </div>
+  <div class="card-testimonial-stars">
+    <% review.star.times do  %>
+      <i class="fa fa-star"></i>
+    <% end %>
+  </div>
+  <% if policy(review).destroy? %>
+    <%= link_to course_review_path(course, review), method: :delete, data: { confirm: "Are you sure?"} do %>
+      <i class="fa fa-trash"></i>
+    <% end %>
+  <% end %>
 </div>
+

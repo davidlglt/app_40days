@@ -65,21 +65,17 @@
 
 <!-- Review -->
 <div class="container">
+  <h2 class="text-center"><%= pluralize @course.reviews.size, "review" %></h2>
   <div class="row">
-    <div class = "col-md-4 col-offset-4">
-      <h2><%= pluralize @course.reviews.size, "review" %></h2>
-      <div id="reviews">
-        <% if @course.reviews.blank? %>
-        Be the first to leave a review for <%= @course.name %>
-        <% else %>
-        <% @course.reviews.each do |review| %>
-        <%= render 'reviews/show', review: review, course: @course %>
-        <% end %>
-        <% end %>
-        <!-- TODO display only if user connected AND user payed that course -->
-        <%= render 'reviews/new', course: @course, review: @review if current_user %>
-      </div>
-    </div>
+    <% if @course.reviews.blank? %>
+      Be the first to leave a review for <%= @course.name %>
+    <% else %>
+      <% @course.reviews.each do |review| %>
+        <div class="col-xs-12 col-md-4">
+          <%= render 'reviews/show', review: review, course: @course %>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
 <!-- Review -->
