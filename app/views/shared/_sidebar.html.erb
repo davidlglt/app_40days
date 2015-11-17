@@ -1,0 +1,13 @@
+<div class="sidebar-info">
+  <%= image_tag @user.picture, class: "img-circle" %>
+  <div class="sidebar-name">
+    <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+    <p>
+      <i class="fa fa-mail"></i> <%= @user.email %>
+    </p>
+  </div>
+</div>
+
+<%= link_to edit_user_registration_path, class: "btn btn-warning" do %>
+  <i class="fa fa-pencil"></i> Edit my profil
+<% end %>
