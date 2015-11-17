@@ -31,4 +31,8 @@ class ApplicationController < ActionController::Base
   def devise_or_admin_controller?
     devise_controller? || params[:controller] =~ /admin/
   end
+
+  def after_sign_up_path_for(resource)
+    signed_in_root_path(resource)
+  end
 end

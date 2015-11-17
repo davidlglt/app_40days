@@ -5,7 +5,6 @@ class LessonsController < ApplicationController
   before_action :set_lessons
 
   def index
-    @lesson = @lessons.where(header: false).first
   end
 
   def show
