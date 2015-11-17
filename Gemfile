@@ -26,6 +26,11 @@ gem "pundit"
 #i18n
 gem "rails-i18n"
 
+#stripe
+gem 'coffee-script'
+gem 'money-rails'
+gem 'stripe'
+
 #Admin Backend
 gem 'activeadmin', github: 'activeadmin'
 #Add style to admin Backend

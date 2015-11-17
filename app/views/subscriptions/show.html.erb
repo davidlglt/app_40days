@@ -1,0 +1,7 @@
+<h1>Subscription</h1>
+  <ul>
+    <li>Status: <%= @subscription.state %></li>
+    <li>Subscription #: <%= @subscription.id %></li>
+    <li>Course: <%= @subscription.course.name %></li>
+    <li>Amount: <%= humanized_money_with_symbol(@subscription.amount) %></li>
+  <ul>

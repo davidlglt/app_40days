@@ -8,6 +8,11 @@ class CoursesController < ApplicationController
     @courses = Course.all
   end
 
+  def create
+    @course_sku = @course.sku
+
+  end
+
   def show
     @course = Course.find(params[:id])
     @lessons = @course.lessons.order(:tag)
