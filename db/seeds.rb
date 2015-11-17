@@ -5,7 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+
 AdminUser.create!(email: 'admin3@example.com', password: 'password', password_confirmation: 'password')
+
 
 # Cleanup Begin
 Lesson.destroy_all
@@ -15,15 +19,28 @@ User.destroy_all
 # Cleanup end
 
 
-course_got = Course.create!(
-  name: "GOT",
-  image: File.open(Rails.root.join('db/seeds/images/GOT.jpeg'))
 
-)
+Course.create!(name: 'Understand - GOT', content: 'Understand the this TV show in only 40 days', price: 39, image: File.open(Rails.root.join('db/seeds/images/GOT.jpeg') ) )
+Course.create!(name: 'Understand - Premier - League', content: 'Become a real English Fan within 40 days' ,price: 49)
+Course.create!(name: 'Understand - Premier - Challenge', content: 'Become a real English Fan within 40 days' ,price: 49 )
+Course.create!(name: 'Understand - Premier - UEFA', content: 'Become a real English Fan within 40 days' ,price: 49 )
 
-lesson_got_1 = course_got.lessons.create!(
-  name: "GOT Lesson 1"
-)
+# course_got = Course.create!(
+#   name: "GOT",
+#   image: File.open(Rails.root.join('db/seeds/images/GOT.jpeg'))
+
+
+
+
+# course_got = Course.create!(
+#   name: "GOT",
+#   picture: File.open(Rails.root.join('db/seeds/images/GOT.jpeg'))
+
+# )
+
+# lesson_got_1 = course_got.lessons.create!(
+#   name: "GOT Lesson 1"
+# )
 
 # user = User.create!(
 #   email: "test@example.com",

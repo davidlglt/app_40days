@@ -57,7 +57,15 @@
   <div class="row">
     <div class="col-sm-offset-4 col-sm-4">
         <div class="enrollment-bar-omega">
-          <a class="btn btn-danger btn-lg btn-block" href="#">Commencer maintenant </a>
+          <% if user_signed_in? && current_user.courses.include?(@course) %>
+            <%= link_to 'Commencez le cours', course_lessons_path(@course), class: 'btn btn-danger btn-lg btn-block' %>
+          <% else %>
+            <%= form_tag course_subscriptions_path(@course) do %>
+              <%= hidden_field_tag 'course_id', @course.id %>
+              <% request.env['omniauth.origin'] = course_path %>
+              <%= submit_tag 'Achetez ce cours', class: 'btn btn-danger btn-lg btn-block'  %>
+            <% end %>
+          <% end %>
         </div>
       </div>
   </div>
@@ -79,6 +87,7 @@
   </div>
 </div>
 <!-- Review -->
+
 
 <script src="http://fast.wistia.net/static/E-v1.js"></script>
 <script>

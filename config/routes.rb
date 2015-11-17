@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+
+  get 'payments/new'
+
   root to: 'courses#index'
 
   ActiveAdmin.routes(self)
@@ -11,7 +15,9 @@ Rails.application.routes.draw do
   resources :courses do
     resources :lessons,       only: [:index, :show]
     resources :reviews,       only: [:create, :destroy]
-    resources :subscriptions, only: [:create]
+    resources :subscriptions, only: [:create, :show] do
+      resources :payments, only: [:new, :create]
+    end
   end
 
 
