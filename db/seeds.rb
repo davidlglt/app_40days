@@ -15,8 +15,10 @@ User.destroy_all
 
 
 Course.create!(name: 'Understand - GOT', content: 'Understand the this TV show in only 40 days', price: 39, image: File.open(Rails.root.join('db/seeds/images/GOT.jpeg') ) )
-Course.create!(name: 'Understand - Premier - League', content: 'Become a real English Fan within 40 days' ,price: 49 )
+Course.create!(name: 'Understand - Premier - League', content: 'Become a real English Fan within 40 days' ,price: 49)
 Course.create!(name: 'Understand - Premier - Challenge', content: 'Become a real English Fan within 40 days' ,price: 49 )
+Course.create!(name: 'Understand - Premier - UEFA', content: 'Become a real English Fan within 40 days' ,price: 49 )
+
 
 
 # course_got = Course.create!(

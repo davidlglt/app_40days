@@ -9,8 +9,8 @@ class LessonsController < ApplicationController
   end
 
   def show
-    @lesson = @lessons.find(params[:id])
 
+    @lesson = @lessons.find(params[:id])
     @next_lesson = @lesson.next
     @prev_lesson = @lesson.prev
 

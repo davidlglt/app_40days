@@ -60,8 +60,8 @@
   <div class="row">
     <div class="col-sm-offset-4 col-sm-4">
         <div class="enrollment-bar-omega">
-          <% if current_user.courses.include?(@course) %>
-            <%= link_to 'Commencez le cours', 'course_lessons_path(course)', class: 'btn btn-danger btn-lg btn-block' %>
+          <% if user_signed_in? && current_user.courses.include?(@course) %>
+            <%= link_to 'Commencez le cours', course_lessons_path(@course), class: 'btn btn-danger btn-lg btn-block' %>
           <% else %>
             <%= form_tag course_subscriptions_path(@course) do %>
               <%= hidden_field_tag 'course_id', @course.id %>
