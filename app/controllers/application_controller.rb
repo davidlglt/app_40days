@@ -22,6 +22,7 @@ class ApplicationController < ActionController::Base
   end
 
   protected
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:first_name, :last_name, :email, :password, :remember_me) }
     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:email, :password, :remember_me) }
@@ -32,7 +33,4 @@ class ApplicationController < ActionController::Base
     devise_controller? || params[:controller] =~ /admin/
   end
 
-  def after_sign_up_path_for(resource)
-    signed_in_root_path(resource)
-  end
 end

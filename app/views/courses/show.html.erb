@@ -65,6 +65,7 @@
           <% else %>
             <%= form_tag course_subscriptions_path(@course) do %>
               <%= hidden_field_tag 'course_id', @course.id %>
+              <% request.env['omniauth.origin'] = course_path %>
               <%= submit_tag 'Achetez ce cours', class: 'btn btn-danger btn-lg btn-block'  %>
             <% end %>
           <% end %>
