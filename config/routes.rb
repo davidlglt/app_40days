@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resource :profile, only: [:show], controller: 'profile'
 
+
   resources :courses do
     resources :lessons,       only: [:index, :show]
     resources :reviews,       only: [:create, :destroy]
