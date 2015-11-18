@@ -4,12 +4,13 @@
   <div class="banner-content">
     <h1><%= @course.name %></h1>
     <p>Ici une petite description du cours </p>
-    <% if policy(@subscription).create? %>
-      <%= form_tag course_subscriptions_path(@course) do %>
-        <%= submit_tag "Je commence maintenant", class: "btn btn-primary btn-lg" %>
-      <% end %>
+
+    <% if policy(@course).private_show? %>
+      <%= link_to "Accéder au cours", course_lessons_path(@course), class: "btn btn-primary btn-lg" %>
     <% else %>
-      <%= link_to "Accéder au cours", profile_path, class: "btn btn-primary btn-lg" %>
+      <%= form_tag course_subscriptions_path(@course) do %>
+        <%= submit_tag 'Achetez ce cours',  class: "btn btn-primary btn-lg"   %>
+      <% end %>
     <% end %>
   </div>
 </div>
@@ -57,12 +58,10 @@
   <div class="row">
     <div class="col-sm-offset-4 col-sm-4">
         <div class="enrollment-bar-omega">
-          <% if user_signed_in? && current_user.courses.include?(@course) %>
+          <% if policy(@course).private_show? %>
             <%= link_to 'Commencez le cours', course_lessons_path(@course), class: 'btn btn-danger btn-lg btn-block' %>
           <% else %>
             <%= form_tag course_subscriptions_path(@course) do %>
-              <%= hidden_field_tag 'course_id', @course.id %>
-              <% request.env['omniauth.origin'] = course_path %>
               <%= submit_tag 'Achetez ce cours', class: 'btn btn-danger btn-lg btn-block'  %>
             <% end %>
           <% end %>

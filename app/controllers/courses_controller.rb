@@ -15,6 +15,8 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
+    store_location_for(:user, course_path(@course))
+
     @lessons = @course.lessons.order(:tag)
     @subscription = Subscription.new(course: @course)
 
