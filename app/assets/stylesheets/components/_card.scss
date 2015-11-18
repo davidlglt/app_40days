@@ -41,7 +41,7 @@
   font-size: 18px;
   text-transform: uppercase;
   position: absolute;
-  top: 170px;
+  bottom: 10px;
   left: 10px;
 }
 .card-text {
@@ -72,5 +72,75 @@
 }
 
 .card-course {
-margin-top: 10px
+  margin-top: 10px
+}
+
+
+// Card testimonials
+.card-testimonial {
+  background: white;
+  padding: 15px;
+  border-radius: 3px;
+  font-size: 17px;
+  color: #353434;
+  margin-bottom: 5px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100px;
+  i {
+    color: $yellow;
+    font-size: 20px;
+  }
+  a {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    i {
+      color: #D8D8D8;
+      &:hover {
+        color: black;
+      }
+    }
+  }
+}
+.card-testimonial-stars {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.card-testimonial-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  img {
+    width: 40px;
+  }
+  .card-testimonial-text {
+    flex: 1 1 auto;
+    padding-left: 15px;
+    i {
+      color: #E7E7E7;
+    }
+  }
+}
+
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1;
+}
+
+.Card-Payment {
+  position: relative;
+  height: 200px;
+  text-color: black;
+  color: white;
+  margin: 0px auto;
+  box-shadow: 2px 2px 3px #ddd
 }

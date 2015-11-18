@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <br>
+<!--     <div class = "Card-Payment"> -->
+    <div class ="thumbnail">
+      <div class = "text-center">
+          <h1> Recapitulatif de paiement </h1>
+
+          <h3>Purchase of course <%= @subscription.course.name %></h3>
+          <br>
+          <%= form_tag course_subscription_payments_path(@course, @subscription) do %>
+            <article>
+            <label>Amount: <%= humanized_money_with_symbol(@subscription.amount) %></label>
+            </article>
+            <br>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-name="My Course"
+              data-description="Course <%= @subscription.course.name %>"
+              data-amount="<%= @subscription.amount_cents %>"
+              data-currency="EUR"></script>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>

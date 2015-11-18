@@ -5,12 +5,11 @@ class LessonsController < ApplicationController
   before_action :set_lessons
 
   def index
-    @lesson = @lessons.where(header: false).first
   end
 
   def show
-    @lesson = @lessons.find(params[:id])
 
+    @lesson = @lessons.find(params[:id])
     @next_lesson = @lesson.next
     @prev_lesson = @lesson.prev
 
@@ -24,6 +23,6 @@ class LessonsController < ApplicationController
   end
 
   def set_lessons
-    @lessons = @course.lessons.order(:tag)
+    @lessons = @course.lessons
   end
 end

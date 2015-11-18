@@ -5,7 +5,11 @@ class SubscriptionPolicy < ApplicationPolicy
     end
   end
 
+  def show?
+    record.user == user
+  end
+
   def create?
-    user.nil? || user.subscriptions.where(course_id: record.course_id).empty?
+    record.user == user
   end
 end

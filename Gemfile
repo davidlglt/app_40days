@@ -26,6 +26,13 @@ gem "pundit"
 #i18n
 gem "rails-i18n"
 
+#stripe
+gem 'coffee-script'
+gem 'money-rails'
+gem 'stripe'
+
+gem 'acts_as_list'
+
 #Admin Backend
 gem 'activeadmin', github: 'activeadmin'
 #Add style to admin Backend
@@ -35,6 +42,10 @@ gem 'active_admin-sortable_tree', '~> 0.2.1'
 
 #Preview of mail on browser
 gem 'letter_opener', group: :development
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-pubsub-js'
+end
 
 group :development, :test do
   gem 'binding_of_caller'

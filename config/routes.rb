@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+
+  get 'payments/new'
+
   root to: 'courses#index'
 
   ActiveAdmin.routes(self)
@@ -6,6 +10,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   resource :profile, only: [:show], controller: 'profile'
+
 
   resources :courses do
     resources :lessons,       only: [:index, :show]

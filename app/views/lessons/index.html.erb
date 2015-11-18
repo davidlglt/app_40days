@@ -1,41 +1,28 @@
 <div class="container">
   <div class="row">  <!-- row 1-->
 
-    <div class="col-md-4" class="column-lessons">
-      <% @lessons.each do |lesson| %>
-        <% if lesson.header %>
-          <ul class="nav nav-pills nav-stacked">
-            <li role="presentation" class="active"><a href="#"><%= lesson.name %></a></li>
-          </ul>
-        <% else %>
-          <ul class="nav nav-pills nav-stacked">
-            <li role="presentation">
-              <%= link_to lesson.note, [lesson.course, lesson], remote: true %>
-            </li>
-          </ul>
+    <div class="col-md-4">
+      <div class="column-lessons">
+        <% @lessons.each do |lesson| %>
+          <% if lesson.header %>
+            <ul class="nav nav-pills nav-stacked">
+              <li role="presentation" class="active"><a href="#"><%= lesson.name %></a></li>
+            </ul>
+          <% else %>
+            <ul class="nav nav-pills nav-stacked">
+              <li role="presentation">
+                <%= link_to lesson.name, [lesson.course, lesson], remote: true %>
+              </li>
+            </ul>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
-
      <!-- col lessons -->
-    <div id="lesson_show">
-      <%= render 'show', lesson: @lesson %>
-    </div>
 
     <!-- LECTEUR VIDEO row 1 -->
+    <div class='col-md-8' id="lesson_show">
+    </div>
+
   </div> <!-- FIN row 1-->
 </div> <!-- CONTAINER -->
-
-<% content_for :after_js do %>
-  <script src="http://fast.wistia.net/static/E-v1.js"></script>
-  <script>
-    wistiaEmbed = Wistia.embed("<%= @lesson.video %>", {
-      videoQuality: "hd-only",
-      videoFoam: true
-    });
-
-    function setPlaySpeed(speed) {
-      wistiaEmbed.playbackRate(speed);
-    }
-  </script>
-<% end %>

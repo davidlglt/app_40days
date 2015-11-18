@@ -8,8 +8,15 @@ class CoursesController < ApplicationController
     @courses = Course.all
   end
 
+  def create
+    @course_sku = @course.sku
+
+  end
+
   def show
     @course = Course.find(params[:id])
+    store_location_for(:user, course_path(@course))
+
     @lessons = @course.lessons.order(:tag)
     @subscription = Subscription.new(course: @course)
 

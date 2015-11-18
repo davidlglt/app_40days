@@ -3,13 +3,13 @@
   <div class="banner-shadow"></div>
   <div class="banner-content">
     <h1><%= @course.name %></h1>
-    <p>Ici une petite description du cours (manque cette colone en DB)</p>
-    <% if policy(@subscription).create? %>
-      <%= form_tag course_subscriptions_path(@course) do %>
-        <%= submit_tag "Je commence maintenant", class: "btn btn-primary btn-lg" %>
-      <% end %>
+    <p><%= @course.content %></p>
+    <% if policy(@course).private_show? %>
+      <%= link_to "Accéder au cours", course_lessons_path(@course), class: "btn btn-primary btn-lg" %>
     <% else %>
-      <%= link_to "Accéder au cours", profile_path, class: "btn btn-primary btn-lg" %>
+      <%= form_tag course_subscriptions_path(@course) do %>
+        <%= submit_tag 'Achetez ce cours',  class: "btn btn-primary btn-lg"   %>
+        <% end %>
     <% end %>
   </div>
 </div>
@@ -21,46 +21,49 @@
       <script src="//fast.wistia.net/assets/external/E-v1.js" async></script>
     </div>
   </div>
-
+</div>
 
 <div class="container">
-    <div class="about-section-info">
-      <h3 class="color-primary text-center">À propos de ce cours</h3>
-      <p><span> <strong>40DAYS</strong> vous donne tous les outils nécessaires pour parler, écrire et comprendre une nouvelle langue. Tout est très facile avec 40DAYS : Choisissez simplement les cours qui vous intéressent et commencez à élargir votre vocabulaire. Et si la grammaire vous fait peur, ne vous en faites pas. Vous l’apprendrez de manière intuitive et presque sans vous en rendre compte.</span></p>
-    </div>
-  </div>
+  <h3 class="text-center">À propos de ce cours</h3>
+  <p class="about-section-info"><strong>40DAYS</strong> vous donne tous les outils nécessaires pour parler, écrire et comprendre une nouvelle langue. Choisissez simplement les cours qui vous intéressent et commencez à élargir votre vocabulaire. Et si la grammaire vous fait peur, ne vous en faites pas. Vous l’apprendrez de manière intuitive et presque sans vous en rendre compte.</p>
+</div>
 
 
-  <div class="row">
-    <div class="col-xs-offset-1 col-xs-10 benefits-section">
-      <div class="col-xs-6">
-        <h4>Ce que vous achetez</h4>
-          <ul class="omh">
+<div class="container-fluid">
+  <div class="row red-banner" style="background:#D85536">
+    <div class="col-xs-12 benefits-section">
+      <div class="col-xs-12 col-sm-6 list-features">
+        <h3>Ce que vous achetez</h3>
+          <ul>
             <li>+6 heures de cours en vidéo</li>
+            <li>40 objectifs à valider</li>
             <li>Une application mobile dédiée</li>
-            <li>Apprenez à votre rythme</li>
-            <li>Un certificat de réussite</li>
+            <li>Un accès à VIE à votre formation</li>
           </ul>
       </div>
-      <div class="col-xs-6">
-        <h4>Ce que vous apprendrez :</h4>
-        <ul class="omh">
-          <li>Mémorisez plus de 650 mots et expressions</li>
-          <li>Des progrès mesurables chaque semaine</li>
-          <li>Vous comprenez 100% du contenu dans 40 jours</li>
-          <li>Vous n'apprenez que la garmmaire qui vous sert vraiment</li>
-        </ul>
+      <div class="col-xs-12 col-sm-6 list-features">
+        <h3>Ce que vous apprendrez :</h3>
+          <ul>
+            <li>Plus de 650 mots et expressions</li>
+            <li>Des progrès mesurables chaque semaine</li>
+            <li>Vous comprenez 100% du contenu dans 40 jours</li>
+            <li>Vous n'apprenez que la garmmaire qui vous sert vraiment</li>
+          </ul>
       </div>
     </div>
   </div>
 </div>
-
-
 <div class="enrollment-bar-section">
   <div class="row">
     <div class="col-sm-offset-4 col-sm-4">
         <div class="enrollment-bar-omega">
-          <a class="btn btn-danger btn-lg btn-block" href="#">Commencer maintenant </a>
+          <% if policy(@course).private_show? %>
+            <%= link_to 'Commencez le cours', course_lessons_path(@course), class: 'btn btn-danger btn-lg btn-block' %>
+          <% else %>
+            <%= form_tag course_subscriptions_path(@course) do %>
+              <%= submit_tag 'Achetez ce cours', class: 'btn btn-danger btn-lg btn-block'  %>
+            <% end %>
+          <% end %>
         </div>
       </div>
   </div>
@@ -68,24 +71,17 @@
 
 <!-- Review -->
 <div class="container">
+  <h2 class="text-center"><%= pluralize @course.reviews.size, "Avis"%></h2>
   <div class="row">
-    <div class = "col-md-4 col-offset-4">
-      <h2><%= pluralize @course.reviews.size, "review" %></h2>
-      <div id="reviews">
-        <% if @course.reviews.blank? %>
-        Be the first to leave a review for <%= @course.name %>
-        <% else %>
-        <% @course.reviews.each do |review| %>
-        <%= render 'reviews/show', review: review %>
-        <% end %>
-        <% end %>
-        <!-- TODO display only if user connected AND user payed that course -->
-        <%= render 'reviews/new', course: @course, review: @review if current_user %>
-      </div>
-    </div>
+      <% @course.reviews.each do |review| %>
+        <div class="col-xs-12 col-md-4">
+          <%= render 'reviews/show', review: review, course: @course %>
+        </div>
+    <% end %>
   </div>
 </div>
 <!-- Review -->
+
 
 <script src="http://fast.wistia.net/static/E-v1.js"></script>
 <script>
