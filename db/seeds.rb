@@ -11,18 +11,30 @@ AdminUser.create!(email: 'admin@example.com', password: 'password', password_con
 Subscription.destroy_all
 Course.destroy_all
 User.destroy_all
+
+
+anglais = Course.create(name: 'Anglais')
+francais = Course.create(name: 'Français')
+arabe = Course.create(name: 'Arabe')
+
+user = User.create(email: 'oscar@lefebvre.fr', password: 'topsecret')
+
+Word.create(word: 'Hello', traduction: 'Bonjour', course_id: 1)
+
+
+
 # Cleanup end
 
 
-course_got = Course.create!(
-  name: "GOT",
-  picture: File.open(Rails.root.join('db/seeds/images/GOT.jpeg'))
+# course_got = Course.create!(
+#   name: "GOT",
+#   picture: File.open(Rails.root.join('db/seeds/images/GOT.jpeg'))
 
-)
+# )
 
-lesson_got_1 = course_got.lessons.create!(
-  name: "GOT Lesson 1"
-)
+# lesson_got_1 = course_got.lessons.create!(
+#   name: "GOT Lesson 1"
+# )
 
 # user = User.create!(
 #   email: "test@example.com",

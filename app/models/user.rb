@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :reviews
   has_many :subscriptions, dependent: :destroy
   has_many :courses, through: :subscriptions
+  has_many :words, through: :scores
+  has_many :scores
 
 
   devise :omniauthable, omniauth_providers: [:facebook]
