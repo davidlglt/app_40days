@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20151118114230) do
     t.text     "small_description"
     t.integer  "total_words"
     t.integer  "price_cents",        default: 0, null: false
+    t.string   "picture"
   end
 
   create_table "lessons", force: :cascade do |t|
