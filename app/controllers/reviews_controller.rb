@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
     authorize @review
     course = @review.course
     if @review.save
-      redirect_to course_path(course)
+      redirect_to profile_path
       # respond_to do |format|
       #   format.html {  }
       #   format.js  # <-- will render `app/views/reviews/create.js.erb`
@@ -16,6 +16,9 @@ class ReviewsController < ApplicationController
       #   format.html { render 'course/show' }
       #   format.js  # <-- idem
       # end
+
+      render profile_path, :alert => 'Alert message!'
+
     end
   end
 
@@ -26,7 +29,7 @@ class ReviewsController < ApplicationController
     course = @review.course
     @review.destroy
 
-    redirect_to course_path(course)
+    redirect_to profile_path
   end
 
   private

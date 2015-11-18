@@ -6,25 +6,19 @@
           <div class="card">
             <span class="card-bg" style="background-image: url('<%=course.image%>')"></span>
             <span class="card-gradient"></span>
-            <div class="label label-info price">
-              <span class="glyphicon glyphicon-tag"></span>
-            </div>
             <div class="label label-info time">
-              <i class="fa fa-clock-o"></i><span></span> Voir le cours</span>
+              <i class="fa fa-clock-o"></i><span>Durée: <%=course.duration%> jours</span>
             </div>
             <span class="card-category"><%= course.name %></span>
           </div>
-          <div class="block">
-            <span><p class="block-description">ici il y aura une petite descripton</p></span>
-            <%= link_to 'Commencez le cours', course_lessons_path(course), class: 'btn btn-danger btn-lg btn-block' %>
-          </div>
+            <%= link_to 'Reprendre mon cours', course_lessons_path(course), class: 'btn btn-danger btn-lg btn-block' %>
         </div>
       </div>
       <div class="col-xs-12 col-md-8">
-        <h2><%= pluralize course.reviews.size, "review" %></h2>
+        <h2>Vous avez laissé <%= pluralize course.reviews.size, "avis pour ce cours" %></h2>
         <div id="reviews">
           <% if course.reviews.blank? %>
-          Be the first to leave a review for <%= course.name %>
+          Dites-nous ce que vous pensez de ce cours
           <% else %>
             <% course.reviews.each do |review| %>
               <%= render 'reviews/show', review: review, course: course %>
