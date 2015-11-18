@@ -20,7 +20,7 @@ Course.destroy_all
 
 
 
-Course.create!(name: 'Comprendre la première league', duration: 40, total_words: 950, price: 59, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/football.png') ) )
+Course.create!(name: 'Comprendre la première league', duration: 40, total_words: 950, price: 59, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/football.jpg') ) )
 
 Lesson.create!(name: "Introduction", tag: 1, video: "1", header: true, course_id: 1, position: 1)
 Lesson.create!(name: "Début d'un Match", tag: 1, video: "7j4zix8pxq", course_id: 1, position: 2)
@@ -33,11 +33,11 @@ Lesson.create!(name: "But et score", video: "1", header: true, tag: 3, course_id
 Lesson.create!(name: "Penalty", video: "iovihdufe0", tag: 3, course_id: 1, position: 9)
 Lesson.create!(name: "Arrêts et parades", tag: 3, video: "7j4zix8pxq", course_id: 1, position: 10)
 
-Course.create!(name: 'GOT en Anglais', duration: 40, total_words: 950, price: 59, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/GOT.png') ) )
+Course.create!(name: 'Comprendre GOT en Anglais', duration: 40, total_words: 950, price: 59, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/GOT.png') ) )
 
-Course.create!(name: 'The old man and the sea', duration: 40, total_words: 800, price: 49, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/old_man.jpg') ) )
+Course.create!(name: 'Lire et comprendre "The old man and the sea"', duration: 40, total_words: 800, price: 49, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/old_man.jpg') ) )
 
-Course.create!(name: 'Savoir Lire et écire en arabe', duration: 20, total_words: 500, price: 69, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/arabic.jpg') ) )
+Course.create!(name: 'Savoir Lire et Écrire en arabe', duration: 20, total_words: 500, price: 69, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/arabic.jpg') ) )
 
 # course_got = Course.create!(
 #   name: "GOT",
