@@ -41,6 +41,10 @@ gem 'active_admin-sortable_tree', '~> 0.2.1'
 #Preview of mail on browser
 gem 'letter_opener', group: :development
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-pubsub-js'
+end
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
