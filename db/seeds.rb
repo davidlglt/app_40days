@@ -34,7 +34,7 @@ Lesson.create!(name: "But et score", video: "1", header: true, tag: 3, course: c
 Lesson.create!(name: "Penalty", video: "iovihdufe0", tag: 3, course: course, position: 9)
 Lesson.create!(name: "Arrêts et parades", tag: 3, video: "7j4zix8pxq", course: course, position: 10)
 
-Course.create!(name: 'Comprendre GOT en Anglais', duration: 40, total_words: 950, price: 59, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/GOT.png') ) )
+Course.create!(name: 'Comprendre GOT en Anglais', duration: 40, total_words: 950, price: 59, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/got.png') ) )
 
 Course.create!(name: 'Lire et comprendre "The old man and the sea"', duration: 40, total_words: 800, price: 49, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/old_man.jpg') ) )
 
