@@ -15,10 +15,13 @@ Rails.application.routes.draw do
   resources :courses do
     resources :lessons,       only: [:index, :show]
     resources :reviews,       only: [:create, :destroy]
-    resources :subscriptions, only: [:create]
-    resources :words
-    get 'words/:id/update', to: 'words#update_word_score', as: 'update_word_score'
-  end
+    resources :subscriptions, only: [:create, :show] do
+      resources :payments, only: [:new, :create]
+      end
+    end
+    #resources :words
+   # get 'words/:id/update', to: 'words#update_word_score', as: 'update_word_score'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

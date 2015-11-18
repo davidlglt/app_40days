@@ -8,12 +8,9 @@
 
 # AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
-<<<<<<< HEAD
 AdminUser.destroy_all
 AdminUser.create!(email: 'admin3@example.com', password: 'password', password_confirmation: 'password')
-=======
 # AdminUser.create!(email: 'admin3@example.com', password: 'password', password_confirmation: 'password')
->>>>>>> bc17e0ea1ab30a0b43191c288b05a6b2d6eb7d8c
 
 
 # Cleanup Begin
@@ -22,6 +19,7 @@ Subscription.destroy_all
 Course.destroy_all
 User.destroy_all
 
+=begin
 
 anglais = Course.create(name: 'Anglais')
 francais = Course.create(name: 'Français')
@@ -31,6 +29,7 @@ user = User.create(email: 'oscar@lefebvre.fr', password: 'topsecret')
 
 Word.create(word: 'Hello', traduction: 'Bonjour', course_id: 1)
 
+=end
 
 
 # Cleanup end
