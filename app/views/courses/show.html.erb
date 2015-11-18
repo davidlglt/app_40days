@@ -3,18 +3,13 @@
   <div class="banner-shadow"></div>
   <div class="banner-content">
     <h1><%= @course.name %></h1>
-
     <p><%= @course.content %></p>
-
     <% if policy(@course).private_show? %>
       <%= link_to "Accéder au cours", course_lessons_path(@course), class: "btn btn-primary btn-lg" %>
-
-
-    <% if policy(@subscription).create? %>
-
+    <% else %>
       <%= form_tag course_subscriptions_path(@course) do %>
         <%= submit_tag 'Achetez ce cours',  class: "btn btn-primary btn-lg"   %>
-      <% end %>
+        <% end %>
     <% end %>
   </div>
 </div>
