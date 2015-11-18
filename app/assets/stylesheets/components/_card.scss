@@ -125,3 +125,22 @@
     }
   }
 }
+
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1;
+}
+
+.Card-Payment {
+  position: relative;
+  height: 200px;
+  text-color: black;
+  color: white;
+  margin: 0px auto;
+  box-shadow: 2px 2px 3px #ddd
+}
