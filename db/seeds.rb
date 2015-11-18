@@ -8,6 +8,7 @@
 
 # AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
+AdminUser.destroy_all
 AdminUser.create!(email: 'admin3@example.com', password: 'password', password_confirmation: 'password')
 
 
