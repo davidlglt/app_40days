@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="col-xs-12 col-md-8">
-        <h2>Vous avez laissé <%= pluralize course.reviews.size, "avis pour ce cours" %></h2>
+        <h4>Vous avez laissé <%= pluralize course.reviews.size, "avis pour ce cours" %></h4>
         <div id="reviews">
           <% if course.reviews.blank? %>
           Dites-nous ce que vous pensez de ce cours
