@@ -21,18 +21,18 @@ User.destroy_all
 
 
 
-Course.create!(name: 'Comprendre la première league', duration: 40, total_words: 950, price: 59, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/football.jpg') ) )
+course = Course.create!(name: 'Comprendre la première league', duration: 40, total_words: 950, price: 59, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/football.jpg') ) )
 
-Lesson.create!(name: "Introduction", tag: 1, video: "1", header: true, course_id: 1, position: 1)
-Lesson.create!(name: "Début d'un Match", tag: 1, video: "7j4zix8pxq", course_id: 1, position: 2)
-Lesson.create!(name: "Les joueurs et l'arbitrage", video: "iovihdufe0", tag: 1, course_id: 1, position: 3)
-Lesson.create!(name: "Actions en défense", tag: 1, video: "7j4zix8pxq", course_id: 1, position: 4)
-Lesson.create!(name: "L'attaque", video: "1", header: true, tag: 2, course_id: 1, position: 5)
-Lesson.create!(name: "Types d'attaque", video: "iovihdufe0", tag: 2, course_id: 1, position: 6)
-Lesson.create!(name: "Zone de but", tag: 2, video: "7j4zix8pxq", course_id: 1, position: 7)
-Lesson.create!(name: "But et score", video: "1", header: true, tag: 3, course_id: 1, position: 8)
-Lesson.create!(name: "Penalty", video: "iovihdufe0", tag: 3, course_id: 1, position: 9)
-Lesson.create!(name: "Arrêts et parades", tag: 3, video: "7j4zix8pxq", course_id: 1, position: 10)
+Lesson.create!(name: "Introduction", tag: 1, video: "1", header: true, course: course, position: 1)
+Lesson.create!(name: "Début d'un Match", tag: 1, video: "7j4zix8pxq", course: course, position: 2)
+Lesson.create!(name: "Les joueurs et l'arbitrage", video: "iovihdufe0", tag: 1, course: course, position: 3)
+Lesson.create!(name: "Actions en défense", tag: 1, video: "7j4zix8pxq", course: course, position: 4)
+Lesson.create!(name: "L'attaque", video: "1", header: true, tag: 2, course: course, position: 5)
+Lesson.create!(name: "Types d'attaque", video: "iovihdufe0", tag: 2, course: course, position: 6)
+Lesson.create!(name: "Zone de but", tag: 2, video: "7j4zix8pxq", course: course, position: 7)
+Lesson.create!(name: "But et score", video: "1", header: true, tag: 3, course: course, position: 8)
+Lesson.create!(name: "Penalty", video: "iovihdufe0", tag: 3, course: course, position: 9)
+Lesson.create!(name: "Arrêts et parades", tag: 3, video: "7j4zix8pxq", course: course, position: 10)
 
 Course.create!(name: 'Comprendre GOT en Anglais', duration: 40, total_words: 950, price: 59, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/GOT.png') ) )
 
