@@ -31,6 +31,8 @@ gem 'coffee-script'
 gem 'money-rails'
 gem 'stripe'
 
+gem 'acts_as_list'
+
 #Admin Backend
 gem 'activeadmin', github: 'activeadmin'
 #Add style to admin Backend

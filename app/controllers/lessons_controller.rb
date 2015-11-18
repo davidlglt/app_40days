@@ -23,6 +23,6 @@ class LessonsController < ApplicationController
   end
 
   def set_lessons
-    @lessons = @course.lessons.order(:tag)
+    @lessons = @course.lessons
   end
 end

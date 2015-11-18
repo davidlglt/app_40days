@@ -3,7 +3,7 @@
   <div class="banner-shadow"></div>
   <div class="banner-content">
     <h1><%= @course.name %></h1>
-    <p>Ici une petite description du cours </p>
+    <p><%= @course.content %></p>
     <% if policy(@subscription).create? %>
       <%= form_tag course_subscriptions_path(@course) do %>
         <%= submit_tag "Je commence maintenant", class: "btn btn-primary btn-lg" %>
@@ -73,16 +73,12 @@
 
 <!-- Review -->
 <div class="container">
-  <h2 class="text-center"><%= pluralize @course.reviews.size, "review" %></h2>
+  <h2 class="text-center"><%= pluralize @course.reviews.size, "Avis"%></h2>
   <div class="row">
-    <% if @course.reviews.blank? %>
-      Be the first to leave a review for <%= @course.name %>
-    <% else %>
       <% @course.reviews.each do |review| %>
         <div class="col-xs-12 col-md-4">
           <%= render 'reviews/show', review: review, course: @course %>
         </div>
-      <% end %>
     <% end %>
   </div>
 </div>

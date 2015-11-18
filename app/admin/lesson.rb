@@ -1,5 +1,5 @@
 ActiveAdmin.register Lesson do
-  permit_params :name, :note, :video, :header, :tag, :course_id
+  permit_params :name, :note, :video, :header, :tag, :course_id, :position
 
   sortable tree: false,
                   sorting_attribute: :tag

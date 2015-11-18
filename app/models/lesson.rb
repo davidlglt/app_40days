@@ -1,5 +1,6 @@
 class Lesson < ActiveRecord::Base
   belongs_to :course
+  acts_as_list scope: :course
 
   validates :name, presence: true, length: { maximum: 50}
   validates :video, presence: true
@@ -7,7 +8,7 @@ class Lesson < ActiveRecord::Base
   validates :course, presence: true
 
   def next
-    course.lessons.where("tag > ? AND header = ?", tag, false).order(:tag).first
+    course.lessons.where("position > ? AND header = ?", position, false).order(:tag).first
   end
 
   def prev
