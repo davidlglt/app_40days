@@ -3,7 +3,9 @@
   <div class="banner-shadow"></div>
   <div class="banner-content">
     <h1><%= @course.name %></h1>
+
     <p><%= @course.content %></p>
+
     <% if policy(@course).private_show? %>
       <%= link_to "Accéder au cours", course_lessons_path(@course), class: "btn btn-primary btn-lg" %>
     <% else %>

@@ -8,8 +8,12 @@
 
 # AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
+<<<<<<< HEAD
 AdminUser.destroy_all
 AdminUser.create!(email: 'admin3@example.com', password: 'password', password_confirmation: 'password')
+=======
+# AdminUser.create!(email: 'admin3@example.com', password: 'password', password_confirmation: 'password')
+>>>>>>> bc17e0ea1ab30a0b43191c288b05a6b2d6eb7d8c
 
 
 # Cleanup Begin
@@ -17,11 +21,26 @@ Lesson.destroy_all
 Subscription.destroy_all
 Course.destroy_all
 User.destroy_all
+
+
+anglais = Course.create(name: 'Anglais')
+francais = Course.create(name: 'Français')
+arabe = Course.create(name: 'Arabe')
+
+user = User.create(email: 'oscar@lefebvre.fr', password: 'topsecret')
+
+Word.create(word: 'Hello', traduction: 'Bonjour', course_id: 1)
+
+
+
 # Cleanup end
 
 
 
 course = Course.create!(name: 'Comprendre la première league', duration: 40, total_words: 950, price: 59, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/football.jpg') ) )
+
+
+
 
 Lesson.create!(name: "Introduction", tag: 1, video: "1", header: true, course: course, position: 1)
 Lesson.create!(name: "Début d'un Match", tag: 1, video: "7j4zix8pxq", course: course, position: 2)
@@ -34,9 +53,12 @@ Lesson.create!(name: "But et score", video: "1", header: true, tag: 3, course: c
 Lesson.create!(name: "Penalty", video: "iovihdufe0", tag: 3, course: course, position: 9)
 Lesson.create!(name: "Arrêts et parades", tag: 3, video: "7j4zix8pxq", course: course, position: 10)
 
+
+
 Course.create!(name: 'Comprendre GOT en Anglais', duration: 40, total_words: 950, price: 59, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/got.png') ) )
 
 Course.create!(name: 'Lire et comprendre "The old man and the sea"', duration: 40, total_words: 800, price: 49, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/old_man.jpg') ) )
+
 
 Course.create!(name: 'Savoir Lire et Écrire en arabe', duration: 20, total_words: 500, price: 69, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/arabic.jpg') ) )
 

@@ -8,8 +8,12 @@ class User < ActiveRecord::Base
   has_many :reviews
   has_many :subscriptions, dependent: :destroy
 
+  has_many :courses, through: :subscriptions
+  has_many :words, through: :scores
+  has_many :scores
   has_many :paid_subscriptions, -> { where(state: 'paid') }, class_name: 'Subscription'
   has_many :courses, through: :paid_subscriptions
+
 
 
   devise :omniauthable, omniauth_providers: [:facebook]
