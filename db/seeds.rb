@@ -13,9 +13,9 @@ AdminUser.create!(email: 'admin3@example.com', password: 'password', password_co
 
 # Cleanup Begin
 Lesson.destroy_all
-#Subscription.destroy_all
+Subscription.destroy_all
 Course.destroy_all
-#User.destroy_all
+User.destroy_all
 # Cleanup end
 
 
