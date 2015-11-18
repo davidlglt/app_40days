@@ -13,8 +13,9 @@ class Course < ActiveRecord::Base
 
   monetize :price_cents
 
-  has_attached_file :image, styles: { large: "600x600", medium: "300x300>", thumb: "170x75#" }
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
+  # has_attached_file :image, styles: { large: "600x600", medium: "300x300>", thumb: "170x75#" }
+  # validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   def average_rating
     reviews.blank? ? 0 : reviews.average(:star).round(2)

@@ -16,6 +16,18 @@ Lesson.destroy_all
 Subscription.destroy_all
 Course.destroy_all
 User.destroy_all
+
+
+anglais = Course.create(name: 'Anglais')
+francais = Course.create(name: 'Français')
+arabe = Course.create(name: 'Arabe')
+
+user = User.create(email: 'oscar@lefebvre.fr', password: 'topsecret')
+
+Word.create(word: 'Hello', traduction: 'Bonjour', course_id: 1)
+
+
+
 # Cleanup end
 
 
