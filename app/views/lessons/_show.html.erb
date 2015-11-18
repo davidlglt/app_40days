@@ -1,5 +1,6 @@
   <div >
   <div class="thumbnail">
+    <h4 class="text-center"><%= @lesson.name%></h4>
     <div id="wistia_<%= @lesson.video %>"></div>
     <div class="caption">
       <div class="row">
@@ -25,9 +26,4 @@
         </div>
       </div>
     </div>
-
-    <!-- TITRE ET NOTES DE COURS -->
-    <h4><%= @lesson.name%></h4>
-    <p><%= @lesson.note%></p>
-  </div> <!-- Thumbnail -->
 </div>

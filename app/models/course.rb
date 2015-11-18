@@ -1,11 +1,14 @@
 class Course < ActiveRecord::Base
-  has_many :lessons
+  has_many :lessons, -> { order(position: :asc) }
   has_many :reviews, dependent: :destroy
   has_many :subscriptions
   has_many :users, through: :subscriptions
 
   validates :name, presence: true, length: { maximum: 50}
-  validates :content, presence: true, length: { maximum: 500}
+  validates :duration, presence: true
+  validates :total_words, presence: true
+  validates :video_teaser, presence: true
+  validates :content, length: { maximum: 500}
   validates :price, presence: true
 
   monetize :price_cents
