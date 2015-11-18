@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
 
-  skip_before_action :authenticate_userf!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
   skip_after_action :verify_policy_scoped
   skip_after_action :verify_authorized
 
