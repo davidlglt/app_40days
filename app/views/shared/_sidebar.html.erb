@@ -1,3 +1,8 @@
+<div>
+    <%= link_to profile_path(current_user) do %>
+    <i class="fa fa-arrow-left"></i>Retour
+    <% end %>
+  </div>
 <div class="sidebar-info">
   <%= image_tag @user.picture, class: "img-circle" %>
   <div class="sidebar-name">
@@ -24,13 +29,29 @@
 
 
     <div class="stats">
-      <div class="stats__amount">O</div>
+      <div class="stats__amount">15</div>
+      <div class="stats__caption">Mots à apprendre</div>
+      <div class="stats__change">
+      </div>
+
+    </div>
+
+    <div class="stats">
+      <div class="stats__amount">0</div>
       <div class="stats__caption">Mots appris</div>
       <div class="stats__change">
-        <div class="stats__value">+0</div>
-        <div class="stats__period">cette semaine</div>
       </div>
-      <button type="button" class="btn btn-danger">Réviser mon vocabulaire</button>
     </div>
+
+     <div class="stats">
+      <div class="stats__caption">Vous pouvez comprendre</div>
+      <div class="stats__amount">0 %</div>
+      <div class="stats__caption">du contenu</div>
+      <div class="stats__change">
+      </div>
+    </div>
+
+
   </div>
+  <button type="button" class="btn btn-danger">Réviser mon vocabulaire</button>
 </div>
