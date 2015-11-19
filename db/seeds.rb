@@ -8,12 +8,9 @@
 
 # AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
-<<<<<<< HEAD
 AdminUser.destroy_all
 AdminUser.create!(email: 'admin3@example.com', password: 'password', password_confirmation: 'password')
-=======
 # AdminUser.create!(email: 'admin3@example.com', password: 'password', password_confirmation: 'password')
->>>>>>> bc17e0ea1ab30a0b43191c288b05a6b2d6eb7d8c
 
 
 # Cleanup Begin
@@ -22,6 +19,7 @@ Subscription.destroy_all
 Course.destroy_all
 User.destroy_all
 
+=begin
 
 anglais = Course.create(name: 'Anglais')
 francais = Course.create(name: 'Français')
@@ -31,13 +29,14 @@ user = User.create(email: 'oscar@lefebvre.fr', password: 'topsecret')
 
 Word.create(word: 'Hello', traduction: 'Bonjour', course_id: 1)
 
+=end
 
 
 # Cleanup end
 
 
 
-course = Course.create!(name: 'Comprendre la première league', duration: 40, total_words: 950, price: 59, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/football.jpg') ) )
+course = Course.create!(name: 'Comprendre la première league', duration: 40, total_words: 950, price: 59, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('app/assets/images/got.png') ) )
 
 
 
@@ -55,7 +54,7 @@ Lesson.create!(name: "Arrêts et parades", tag: 3, video: "7j4zix8pxq", course: 
 
 
 
-Course.create!(name: 'Comprendre GOT en Anglais', duration: 40, total_words: 950, price: 59, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/got.png') ) )
+Course.create!(name: 'Comprendre GOT en Anglais', duration: 40, total_words: 950, price: 59, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('app/assets/images/got.png') ) )
 
 Course.create!(name: 'Lire et comprendre "The old man and the sea"', duration: 40, total_words: 800, price: 49, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/old_man.jpg') ) )
 
