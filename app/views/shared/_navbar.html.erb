@@ -34,9 +34,7 @@
         </div>
       </div>
     <% else %>
-      <%= link_to "Sign in with Facebook", omniauth_authorize_path('user', 'facebook'), class: "navbar-wagon-item navbar-wagon-link" %>
-    <hr>
-    <%= link_to t(".top_call_to_action", default: "Sign in"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+      <%= link_to "Sign in with Facebook", omniauth_authorize_path('user', 'facebook'), class: "navbar-wagon-item navbar-wagon-button btn" %>
     <% end %>
   </div>
 </nav>

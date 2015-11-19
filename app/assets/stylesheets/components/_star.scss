@@ -1,76 +1,39 @@
-@import "lesshat";
 
-@starColour: #16a085;
-@starHoverColour: #1abc9c;
+fieldset, label { margin: 0; padding: 0; }
 
-.star-rating {
-  font-family: 'FontAwesome';
-  margin: 50px auto;
+/****** Style Star Rating Widget *****/
 
-  > fieldset {
-    border: none;
-    display: inline-block;
-
-    &:not(:checked) {
-      > input {
-        position: absolute;
-        top: -9999px;
-        clip: rect(0,0,0,0);
-      }
-
-      > label {
-        float: right;
-        width: 1em;
-        padding: 0 .05em;
-        overflow: hidden;
-        white-space: nowrap;
-        cursor: pointer;
-        font-size: 200%;
-        color: @starColour;
-
-        &:before {
-          content: '\f006  ';
-        }
-
-        &:hover,
-        &:hover ~ label {
-          color: @starHoverColour;
-          text-shadow: 0 0 3px @starHoverColour;
-          &:before {
-            content: '\f005  ';
-          }
-        }
-      }
-    }
-
-    > input:checked {
-      & ~ label {
-        &:before {
-          content: '\f005  ';
-        }
-      }
-    }
-
-    > label:active {
-      position: relative;
-      top: 2px;
-    }
-  }
+.rating {
+  border: none;
+  float: left;
 }
 
-body {
-  background: #262829;
-  color: #95a5a6;
-  font-family: 'Raleway';
-  text-align: center;
-
-  p {
-    font-size: 1.6em;
-    margin: auto;
-    width: 80%;
-  }
-
-  a {
-    color: @starColour;
-  }
+.rating > input { display: none; }
+.rating > label:before {
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
 }
+
+.rating > .half:before {
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label {
+  color: #ddd;
+ float: right;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
