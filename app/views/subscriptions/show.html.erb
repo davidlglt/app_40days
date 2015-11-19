@@ -1,7 +1,15 @@
-<h1>Bravo, Vous êtes bien inscrit à la formation <%= @subscription.course.name %></h1>
-  <ul>
-    <li>Status: <%= @subscription.state %></li>
-    <li>Course: <%= @subscription.course.name %></li>
-    <li>Amount: <%= humanized_money_with_symbol(@subscription.amount) %></li>
+<div class="container">
+ <div class="row">
+   <div class="text-center">
+   <h2> Bravo, vous êtes bien inscrit </h2>
+   </div>
+   <%= image_tag @course.image.url(:medium) %>
 
-  <ul>
+
+     <div class = "Card-Payment">
+       <div class = "text-center">
+         <%= link_to "Accéder au cours", course_lessons_path(@course), class: "btn btn-primary btn-lg" %>
+       </div>
+     </div>
+ </div>
+</div>

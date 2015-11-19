@@ -36,10 +36,7 @@ Word.create(word: 'Hello', traduction: 'Bonjour', course_id: 1)
 
 
 
-course = Course.create!(name: 'Comprendre la première league', duration: 40, total_words: 950, price: 59, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('app/assets/images/got.png') ) )
-
-
-
+course = Course.create!(name: 'Comprendre la première league', duration: 40, total_words: 950, price: 59, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('app/assets/images/football.jpg') ) )
 
 Lesson.create!(name: "Introduction", tag: 1, video: "1", header: true, course: course, position: 1)
 Lesson.create!(name: "Début d'un Match", tag: 1, video: "7j4zix8pxq", course: course, position: 2)
@@ -56,10 +53,13 @@ Lesson.create!(name: "Arrêts et parades", tag: 3, video: "7j4zix8pxq", course: 
 
 Course.create!(name: 'Comprendre GOT en Anglais', duration: 40, total_words: 950, price: 59, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('app/assets/images/got.png') ) )
 
-Course.create!(name: 'Lire et comprendre "The old man and the sea"', duration: 40, total_words: 800, price: 49, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/old_man.jpg') ) )
+Course.create!(name: 'Lire et comprendre "The old man and the sea"', duration: 40, total_words: 800, price: 49, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('app/assets/images/old_man.jpg') ) )
 
+Course.create!(name: 'Savoir Lire et Écrire en arabe', duration: 20, total_words: 500, price: 69, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('app/assets/images/arabic.jpg') ) )
 
-Course.create!(name: 'Savoir Lire et Écrire en arabe', duration: 20, total_words: 500, price: 69, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/arabic.jpg') ) )
+Course.create!(name: 'Pitcher en anglais', duration: 10, total_words: 300, price: 69, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('app/assets/images/pitch.jpg') ) )
+
+Course.create!(name: 'Comprendre the Walking Dead', duration: 40, total_words: 900, price: 69, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('app/assets/images/twd.jpg') ) )
 
 # course_got = Course.create!(
 #   name: "GOT",
