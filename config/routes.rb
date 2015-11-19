@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  resource :profile, only: [:show], controller: 'profile'
+  get '/profile', to: 'profile#show'
 
 
   resources :courses do

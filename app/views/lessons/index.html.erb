@@ -1,34 +1,31 @@
-<div>
-<%= link_to profile_path(current_user) do %>
-<i class="fa fa-arrow-left"></i>Retour
-<% end %>
-</div>
-<div class="container">
+<div class="container-fluid">
+  <!-- Sidebar -->
+  <div class="col-md-4">
+    <!-- Btn retrun -->
+    <div class="return">
+      <%= link_to profile_path(current_user) do %>
+        <i class="fa fa-arrow-left"></i> Retour
+      <% end %>
+    </div>
 
-  <div class="row">  <!-- row 1-->
-
-    <div class="col-md-4">
-      <div class="column-lessons">
-        <% @lessons.each do |lesson| %>
-          <% if lesson.header %>
-            <ul class="nav nav-pills nav-stacked">
-              <li role="presentation" class="active"><a href="#"><%= lesson.name %></a></li>
-            </ul>
-          <% else %>
-            <ul class="nav nav-pills nav-stacked">
-              <li role="presentation">
-                <%= link_to lesson.name, [lesson.course, lesson], remote: true %>
-              </li>
-            </ul>
-          <% end %>
+    <!-- Column Lessons -->
+    <div class="column-lessons">
+      <% @lessons.each do |lesson| %>
+        <% if lesson.header %>
+          <ul class="nav nav-pills nav-stacked">
+            <li role="presentation" class="active"><a href="#"><%= lesson.name %></a></li>
+          </ul>
+        <% else %>
+          <ul class="nav nav-pills nav-stacked">
+            <li role="presentation">
+              <%= link_to lesson.name, [lesson.course, lesson], remote: true %>
+            </li>
+          </ul>
         <% end %>
-      </div>
+      <% end %>
     </div>
-     <!-- col lessons -->
-
-    <!-- LECTEUR VIDEO row 1 -->
-    <div class='col-md-8' id="lesson_show">
-    </div>
-
-  </div> <!-- FIN row 1-->
-</div> <!-- CONTAINER -->
+  </div>
+  <!-- LECTEUR VIDEO -->
+  <div class='col-md-8' id="lesson_show">
+  </div>
+</div>
