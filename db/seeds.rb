@@ -36,7 +36,7 @@ Word.create(word: 'Hello', traduction: 'Bonjour', course_id: 1)
 
 
 
-course = Course.create!(name: 'Comprendre la première league', duration: 40, total_words: 950, price: 59, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/football.jpg') ) )
+course = Course.create!(name: 'Comprendre la première league', duration: 40, total_words: 950, price: 59, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('app/assets/images/got.png') ) )
 
 
 
@@ -54,7 +54,7 @@ Lesson.create!(name: "Arrêts et parades", tag: 3, video: "7j4zix8pxq", course: 
 
 
 
-Course.create!(name: 'Comprendre GOT en Anglais', duration: 40, total_words: 950, price: 59, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/got.png') ) )
+Course.create!(name: 'Comprendre GOT en Anglais', duration: 40, total_words: 950, price: 59, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('app/assets/images/got.png') ) )
 
 Course.create!(name: 'Lire et comprendre "The old man and the sea"', duration: 40, total_words: 800, price: 49, video_teaser: "7j4zix8pxq", image: File.open(Rails.root.join('db/seeds/images/old_man.jpg') ) )
 
