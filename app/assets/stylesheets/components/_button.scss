@@ -10,3 +10,24 @@
 .button-show {
   margin-bottom: 5px;
 }
+
+
+.btn-facebook {
+  background: #305C99;
+  color: white;
+  line-height: 35px;
+  padding-left: 30px;
+  padding-right: 30px;
+  line-height: 40px;
+  margin-top: 20px;
+  i.fa-facebook {
+    padding-right: 10px;
+    border-right: 2px solid white;
+    margin-right: 5px;
+  }
+  &:hover {
+    background: #305C99;
+    color: white;
+    opacity: 0.8;
+  }
+}
