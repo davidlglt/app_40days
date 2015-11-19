@@ -3,6 +3,7 @@ class SubscriptionsController < ApplicationController
   before_action :authenticate_user!
 
   def show
+    @course = Course.find(params[:course_id])
     @subscription = Subscription.where(state: 'paid').find(params[:id])
     authorize @subscription
   end

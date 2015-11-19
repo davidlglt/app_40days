@@ -145,3 +145,27 @@
   margin: 0px auto;
   box-shadow: 2px 2px 10px #ddd
 }
+
+
+.bracket {
+ font-size: 30px;
+ font-weight: bold;
+}
+
+.Card-Payment {
+ background-color: #EEEEEE ;
+ position: relative;
+ height: 280px;
+ width: 340px;
+ color: black;
+ border: black;
+ margin: 0px auto;
+ box-shadow: 2px 2px 10px #ddd;
+ h3 {
+   padding: 20px;
+ }
+}
+
+.stripe-button-el{
+ margin: 20px;
+}
