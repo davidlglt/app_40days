@@ -1,5 +1,5 @@
-<div>
-    <%= link_to root_path do %>
+<div class="back">
+  <%= link_to root_path do %>
     <i class="fa fa-arrow-left"></i>Retour
     <% end %>
   </div>
@@ -13,8 +13,10 @@
   </div>
 </div>
 
-<%= link_to edit_user_registration_path, class: "btn btn-xs btn-warning edit-btn" do %>
-  <i class="fa fa-pencil"></i> Edit my profil
+<% if false %>
+  <%= link_to edit_user_registration_path, class: "btn btn-xs btn-warning edit-btn" do %>
+    <i class="fa fa-pencil"></i> Edit my profil
+  <% end %>
 <% end %>
 
 <div class="box">
