@@ -4,6 +4,8 @@ class LessonsController < ApplicationController
   before_action :set_course
   before_action :set_lessons
 
+  layout "course", only: [:index]
+
   def index
   end
 
