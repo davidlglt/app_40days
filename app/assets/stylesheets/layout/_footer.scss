@@ -1,10 +1,10 @@
 // Your footer style //
 .footer{
-  background-color: rgb(43, 45, 46);
+  background-color: #666666;
   color: rgb(237, 239, 237);
   font-family: 'Open Sans';
   padding-top: 30px;
-  padding-bottom: 25px;
+  padding-bottom: 20px;
   position: relative;
   //margin-top: 40px;
   width: 100%;
@@ -20,8 +20,8 @@
 }
 
 // Style logo
-.logo-footer{
-  heigth: 120px;
+.logo-footer img{
+  width: 60px;
 }
 
 .padding{

@@ -75,16 +75,20 @@
               <div class="card">
                 <span class="card-bg" style="background-image: url('<%= course.image %>')"></span>
                 <span class="card-gradient"></span>
-                      <div class="label label-info price">
-                        <span class="glyphicon glyphicon-tag"></span> <sup>€</sup><%=course.price%>
+
+                      <div class="label-container time">
+                        <div class='label-info label'>
+                        <i class="fa fa-clock-o"></i><span></span> Durée: <%=course.duration%>
+                        jours</span>
                       </div>
-                      <div class="label label-info time">
-                        <i class="fa fa-clock-o"></i><span></span> Durée: <%=course.duration%> jours</span>
                       </div>
                   <span class="card-category"><%= course.name %></span>
                 </div>
                 <div class="block">
-                  <span><p class="block-description"><button type="button" class="btn btn-primary button-show">Voir le cours</button></span>
+                  <div class="label label-info price">
+                    <sup>€</sup><%=course.price%>
+                  </div>
+                  <span class='block-cta'><p class="block-description"><button type="button" class="btn btn-primary button-show">Voir le cours</button></span>
                   </div>
               </div>
             </div>

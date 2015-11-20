@@ -13,12 +13,19 @@
   //box-shadow: 2px 2px 3px #ddd
 }
   .block {
-  height: 56px;;
-  background-color: white;
-  color: #565a5c;
-    .block-description {
-      padding: 9px 18px;
-    }
+    height: 56px;;
+    background-color: white;
+    color: #565a5c;
+    display: flex;
+    align-items: center;
+
+    p { margin: 0 }
+
+    .button-show { margin-bottom: 0 }
+
+    &-cta { margin-left: auto }
+
+    &-description { padding-right: 20px }
   }
 
 .card-bg{

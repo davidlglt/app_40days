@@ -1,16 +1,28 @@
 .price {
-    font-size: 16px;
-    position: absolute;
-    top: 208px;
-    right: -10px;
-    padding: 10px;
-    background-color: #BC6666;
-  }
+  font-weight: bold;
+  font-size: 15px;
+  padding: 21px;
+  opacity: .5;
+  background: transparent;
+  color: black;
+  text-shadow: none;
+}
 
 .time {
-    font-size: 16px;
-    position: absolute;
-    top: -10px;
-    right: -5px;
-    padding: 10px;
+  position: absolute;
+  font-size: 16px;
+  padding: 0;
+  right: 0;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  transform: translateY(-50%);
+
+  .label-info {
+    background-color: #FDB631;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 29px;
   }
+}
