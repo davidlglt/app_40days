@@ -2,7 +2,7 @@ var lesson_view = $("<%= j render 'lessons/show', lesson: @lesson %>");
 
 $('#lesson_show').html(lesson_view);
 
-$.getScript("http://fast.wistia.net/static/E-v1.js", function(){
+$.getScript("https://fast.wistia.net/static/E-v1.js", function(){
   wistiaEmbed = Wistia.embed("<%= @lesson.video %>", {
     videoQuality: "hd-only",
     videoFoam:    true
