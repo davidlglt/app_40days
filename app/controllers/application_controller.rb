@@ -29,6 +29,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:first_name, :last_name, :address, :password, :phone_number, :city, :zip_code, :country, :remember_me) }
   end
 
+  def default_url_options
+    { host: ENV['HOST'] || 'localhost:3000' }
+  end
+
   def devise_or_admin_controller?
     devise_controller? || params[:controller] =~ /admin/
   end
