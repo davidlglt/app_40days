@@ -15,13 +15,14 @@
             <%= link_to 'Réviser mon vocabulaire', '#', class: 'btn btn-success btn-lg btn-block' %>
         </div>
       </div>
+
       <div class="col-xs-12 col-md-8">
-        <h4>Vous avez laissé <%= pluralize course.reviews.size, "avis pour ce cours" %></h4>
+        <h4>Vous avez laissé <%= pluralize course.reviews.by_user(current_user).size, "avis pour ce cours" %></h4>
         <div id="reviews">
-          <% if course.reviews.blank? %>
-          Dites-nous ce que vous pensez de ce cours
+          <% if course.reviews.by_user(current_user).blank? %>
+            Dites-nous ce que vous pensez de ce cours
           <% else %>
-            <% course.reviews.each do |review| %>
+            <% course.reviews.by_user(current_user).each do |review| %>
               <%= render 'reviews/show', review: review, course: course %>
             <% end %>
           <% end %>
