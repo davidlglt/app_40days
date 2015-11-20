@@ -2,7 +2,9 @@
   <div class="container navbar-wagon-container">
 
     <a>
-      <%= link_to (image_tag("logo.png", :alt => "home image", :width => 50, :height => 50)), root_path %>
+      <%= link_to root_path do %>
+        <%= render 'shared/logo' %>
+      <% end %>
     </a>
 
     <div class="navbar-wagon-pusher"></div>
@@ -34,7 +36,10 @@
         </div>
       </div>
     <% else %>
-      <%= link_to "Sign in with Facebook", omniauth_authorize_path('user', 'facebook'), class: "navbar-wagon-item navbar-wagon-button btn" %>
+      <%= link_to omniauth_authorize_path('user', 'facebook'), class: "login-fb" do %>
+        Sign in with <i class="fa fa-facebook"></i>
+      <% end %>
     <% end %>
   </div>
 </nav>
+

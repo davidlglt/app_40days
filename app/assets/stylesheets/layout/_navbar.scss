@@ -1,9 +1,40 @@
+.courses-index {
+  .navbar-wagon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: transparent;
+    box-shadow: none;
+
+    .login-fb {
+      color: white;
+    }
+
+    svg {
+      width: 150px;
+
+      path, text { fill: white }
+    }
+
+
+  }
+}
+
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: #f4f4f4;
   transition: all 0.3s ease;
   position: relative;
   z-index: 10;
+
+
+  svg {
+    width: 150px;
+    text { font-weight: bold  }
+
+  }
+
   &-fixed {
     position: fixed;
     left: 0px;
@@ -138,4 +169,16 @@
   border-top: 4px solid;
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
+}
+
+.logo-df {
+  margin-top: 6px;
+}
+
+.login-fb {
+  color: #bc6666;
+  &:hover {
+    text-decoration: none;
+    color: #945052;
+  }
 }
