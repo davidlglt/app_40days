@@ -1,0 +1,5 @@
+# config/meta.yml
+default_title: "40 days"
+meta_description: "Apprendre une langue avec du contenu que vous aimez"
+meta_image: "logo.png" # Une image dans votre dossier app/assets/images/
+# twitter_account: "@nomdevotrecompte" #indispensable pour les Twitter Cards
